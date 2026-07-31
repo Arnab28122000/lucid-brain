@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="page-mode" content="skeleton">
+<title>Cortex — Experts (Wireframe)</title>
+<style>
+.wireframe *{background:transparent!important;color:#555!important;border-color:#bbb!important;box-shadow:none!important;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif!important;}
+.wireframe .wf-box{border:1px solid #bbb;padding:16px;margin:8px 0;background:#fafafa;}
+.wireframe .wf-box.dashed{border-style:dashed;background:transparent;}
+.wireframe .wf-caption{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:6px;}
+.wireframe nav.side{width:200px;border-right:1px solid #ddd;padding:16px;background:#fafafa;}
+.wireframe nav.side a{display:block;padding:8px 10px;color:#555;text-decoration:none;font-size:13px;}
+.wireframe nav.side a.active{background:#eee;font-weight:600;}
+.wireframe header.top{padding:12px 20px;border-bottom:1px solid #ddd;background:#fafafa;}
+.wireframe main{flex:1;padding:20px;overflow:auto;}
+.wireframe .app-shell{display:flex;min-height:100vh;}
+</style>
+</head>
+<body class="wireframe">
+<div class="app-shell">
+
+  <nav class="side">
+    <div class="wf-caption">Workspace</div>
+    <div class="wf-box" style="padding:10px;font-size:12px;">CORTEX &nbsp;·&nbsp; Acme Corp (self-hosted) &nbsp;▾</div>
+    <div class="wf-caption" style="margin-top:16px;">Primary Nav</div>
+    <a href="./home.html">Home</a>
+    <a href="./search.html">Search</a>
+    <a href="./decisions-timeline.html">Decisions Timeline</a>
+    <a href="./admin-console.html">Admin Console</a>
+    <a href="./experts.html" class="active">Experts</a>
+    <div class="wf-caption" style="margin-top:16px;">Spaces</div>
+    <div class="wf-box" style="padding:10px;font-size:12px;">Platform Eng<br>Billing Runbooks<br>Q3 Launch</div>
+    <div class="wf-caption" style="margin-top:16px;">Account</div>
+    <div class="wf-box" style="padding:10px;font-size:12px;">A. Bhattacharya · IC Engineer<br>Settings · Sign out</div>
+  </nav>
+
+  <div style="flex:1;display:flex;flex-direction:column;min-width:0;">
+
+    <header class="top">
+      <div class="wf-caption">Topbar — Global Ask + Command Palette</div>
+      <div style="display:flex;gap:12px;align-items:center;">
+        <div class="wf-box" style="flex:1;margin:0;padding:10px;font-size:12px;">Who knows about connector backfill queueing?&nbsp; ( / to focus )</div>
+        <div class="wf-box" style="margin:0;padding:10px;font-size:12px;">⌘K</div>
+        <div class="wf-box" style="margin:0;padding:10px;font-size:12px;">Scope: All sources ▾</div>
+        <div class="wf-box dashed" style="margin:0;padding:10px;font-size:12px;">Avatar</div>
+      </div>
+    </header>
+
+    <main>
+      <div class="wf-caption">Query Header + Ranking Controls</div>
+      <div class="wf-box" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+        <div style="flex:1;min-width:240px;">
+          <div style="font-size:20px;">Experts on “connector backfill queueing”</div>
+          <div style="font-size:12px;">17 people ranked from 2,914 evidence items you are allowed to see</div>
+        </div>
+        <span class="wf-box" style="margin:0;padding:6px 12px;font-size:12px;">Rank: Evidence weight ▾</span>
+        <span class="wf-box" style="margin:0;padding:6px 12px;font-size:12px;">Team: Any ▾</span>
+        <span class="wf-box" style="margin:0;padding:6px 12px;font-size:12px;">Active last 90 days ✓</span>
+      </div>
+
+      <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;">
+
+        <div style="flex:2;min-width:340px;">
+          <div class="wf-caption">Ranked Expert Cards — Person · Role · Evidence Chips · Actions</div>
+
+          <div class="wf-box" style="border-width:2px;">
+            <div style="display:flex;gap:12px;">
+              <div class="wf-box dashed" style="width:48px;height:48px;padding:0;margin:0;"></div>
+              <div style="flex:1;">
+                <div style="font-size:16px;">Rhea Nayak &nbsp;·&nbsp; #1</div>
+                <div style="font-size:12px;">Staff Engineer, Platform Eng · Bengaluru · UTC+5:30 (online)</div>
+                <div style="font-size:12px;">Owns ingest-queue service. Answered 23 questions on this topic in 90 days.</div>
+              </div>
+            </div>
+            <div class="wf-caption" style="margin-top:10px;">Evidence</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <span class="wf-box" style="margin:0;padding:5px 10px;font-size:11px;">14 PRs · acme/ingest-queue</span>
+              <span class="wf-box" style="margin:0;padding:5px 10px;font-size:11px;">Authored ADR-0058</span>
+              <span class="wf-box" style="margin:0;padding:5px 10px;font-size:11px;">41 replies · #platform-ingest</span>
+              <span class="wf-box" style="margin:0;padding:5px 10px;font-size:11px;">▶ Spoke 18 min · Backfill postmortem</span>
+            </div>
+            <div class="wf-caption" style="margin-top:10px;">Actions</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <span class="wf-box" style="margin:0;padding:6px 12px;font-size:11px;">Message on Slack</span>
+              <span class="wf-box" style="margin:0;padding:6px 12px;font-size:11px;">Ask Cortex first</span>
+              <span class="wf-box" style="margin:0;padding:6px 12px;font-size:11px;">View all evidence</span>
+            </div>
+          </div>
+
+          <div class="wf-box">
+            <div style="display:flex;gap:12px;">
+              <div class="wf-box dashed" style="width:48px;height:48px;padding:0;margin:0;"></div>
+              <div style="flex:1;">
+                <div style="font-size:16px;">Daniel Okafor &nbsp;·&nbsp; #2</div>
+                <div style="font-size:12px;">Support Engineering Lead · Lisbon · UTC+1 (away until 14:00)</div>
+                <div style="font-size:12px;">Handled 9 customer escalations tied to Slack rate limits.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
+              <span class="wf-box" style="margin:0;padding:5px 10px;font-size:11px;">9 tickets · Zendesk</span>
+              <span class="wf-box" style="margin:0;padding:5px 10px;font-size:11px;">Runbook: Backfill triage</span>
+              <span class="wf-box" style="margin:0;padding:5px 10px;font-size:11px;">18 replies · #support-escalations</span>
+            </div>
+          </div>
+
+          <div class="wf-box">
+            <div style="display:flex;gap:12px;">
+              <div class="wf-box dashed" style="width:48px;height:48px;padding:0;margin:0;"></div>
+              <div style="flex:1;">
+                <div style="font-size:16px;">Mia Halvorsen &nbsp;·&nbsp; #3</div>
+                <div style="font-size:12px;">Principal Architect · Oslo · UTC+2 (online)</div>
+                <div style="font-size:12px;">Ratified the bounded-queue decision; light hands-on involvement.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
+              <span class="wf-box" style="margin:0;padding:5px 10px;font-size:11px;">Chaired 4 arch reviews</span>
+              <span class="wf-box" style="margin:0;padding:5px 10px;font-size:11px;">2 decisions on timeline</span>
+              <span class="wf-box" style="margin:0;padding:5px 10px;font-size:11px;">▶ Spoke 6 min · 12 Feb</span>
+            </div>
+          </div>
+
+          <div class="wf-box">
+            <div style="display:flex;gap:12px;">
+              <div class="wf-box dashed" style="width:48px;height:48px;padding:0;margin:0;"></div>
+              <div style="flex:1;">
+                <div style="font-size:16px;">Tomás Ferreira &nbsp;·&nbsp; #4 &nbsp;(former owner)</div>
+                <div style="font-size:12px;">Left the company 04 Apr 2026 — evidence retained, contact disabled</div>
+                <div style="font-size:12px;">Wrote the original NATS consumer; see handover doc.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
+              <span class="wf-box" style="margin:0;padding:5px 10px;font-size:11px;">Handover doc ↗</span>
+              <span class="wf-box" style="margin:0;padding:5px 10px;font-size:11px;">31 archived PRs</span>
+            </div>
+          </div>
+
+          <div class="wf-caption" style="margin-top:12px;">Loading Skeleton — Ranks 5–17</div>
+          <div class="wf-box dashed" style="height:52px;"></div>
+          <div class="wf-box dashed" style="height:52px;"></div>
+        </div>
+
+        <div style="flex:1;min-width:240px;">
+          <div class="wf-caption">How Ranking Works</div>
+          <div class="wf-box" style="font-size:12px;">
+            Signals · authored docs, merged PRs, answered threads, meeting speaking time, ownership metadata.<br>
+            Recency half-life · 120 days.<br>
+            Only evidence you can already open is counted.
+          </div>
+
+          <div class="wf-caption" style="margin-top:16px;">Try Cortex Before Pinging</div>
+          <div class="wf-box" style="font-size:12px;">
+            Cortex already has a cited answer for this topic — 7 sources, last updated 3 days ago.
+            <div class="wf-box" style="display:inline-block;padding:8px 14px;font-size:11px;">Open the answer</div>
+          </div>
+
+          <div class="wf-caption" style="margin-top:16px;">Ownership Gaps</div>
+          <div class="wf-box" style="font-size:12px;">
+            No current owner detected for: legacy Confluence connector, Figma sync.<br>
+            Last contributor left 04 Apr 2026.
+          </div>
+
+          <div class="wf-caption" style="margin-top:16px;">Empty State Example</div>
+          <div class="wf-box dashed" style="font-size:12px;text-align:center;padding:20px;">
+            No experts found for “air-gapped Helm upgrades”. Not enough evidence indexed yet.
+            <div class="wf-box" style="display:inline-block;padding:8px 14px;font-size:11px;">Broaden to related topics</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</body>
+</html>

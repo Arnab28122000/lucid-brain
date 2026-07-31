@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(go build *)",
+      "Bash(go mod *)",
+      "Bash(go run *)",
+      "Bash(go test *)",
+      "Bash(go vet *)",
+      "Bash(gofmt -l *)",
+      "Bash(gofmt -w *)",
+      "Bash(docker build *)",
+      "Bash(docker exec *)",
+      "Bash(docker info *)",
+      "Bash(docker rm *)",
+      "Bash(docker run *)",
+      "Bash(curl -s localhost:*)",
+      "Bash(curl -sf localhost:*)",
+      "mcp__lucid__design_read",
+      "mcp__lucid__design_refine",
+      "mcp__lucid__design_screenshot",
+      "mcp__lucid__design_start",
+      "mcp__lucid__emit_diagram",
+      "mcp__lucid__save_diagram_readme",
+      "mcp__lucid__memory_search",
+      "mcp__lucid__memory_write"
+    ]
+  }
+}

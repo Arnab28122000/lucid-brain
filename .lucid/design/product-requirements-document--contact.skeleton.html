@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="page-mode" content="skeleton">
+<title>Contact — Wireframe</title>
+<style>
+.wireframe *{background:transparent!important;color:#555!important;border-color:#bbb!important;box-shadow:none!important;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif!important;}
+.wireframe .wf-box{border:1px solid #bbb;padding:16px;margin:8px 0;background:#fafafa;}
+.wireframe .wf-box.dashed{border-style:dashed;background:transparent;}
+.wireframe .wf-caption{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:6px;}
+.wireframe nav.side{width:200px;border-right:1px solid #ddd;padding:16px;background:#fafafa;}
+.wireframe nav.side a{display:block;padding:8px 10px;color:#555;text-decoration:none;font-size:13px;}
+.wireframe nav.side a.active{background:#eee;font-weight:600;}
+.wireframe header.top{padding:12px 20px;border-bottom:1px solid #ddd;background:#fafafa;}
+.wireframe main{flex:1;padding:20px;overflow:auto;}
+.wireframe .app-shell{display:flex;min-height:100vh;}
+</style>
+</head>
+<body class="wireframe">
+<div class="app-shell">
+  <nav class="side">
+    <div class="wf-caption">Workspace</div>
+    <div class="wf-box" style="padding:10px;font-size:12px;">Relay Deploy ▾<br>acme-platform</div>
+    <div class="wf-caption" style="margin-top:16px;">Primary Nav</div>
+    <a href="./home.html">Home</a>
+    <a href="./features.html">Features</a>
+    <a href="./pricing.html">Pricing</a>
+    <a href="./docs.html">Docs</a>
+    <a href="./contact.html" class="active">Contact</a>
+    <div class="wf-caption" style="margin-top:16px;">Account</div>
+    <div class="wf-box" style="padding:10px;font-size:12px;">AB · arnab@acme.io<br>Team plan · 4 seats</div>
+  </nav>
+  <div style="flex:1;display:flex;flex-direction:column;">
+    <header class="top">
+      <div class="wf-caption">Topbar</div>
+      <div style="display:flex;gap:16px;align-items:center;font-size:13px;">
+        <span>Contact / Support</span>
+        <span class="wf-box" style="flex:1;padding:8px;margin:0;">Search deploys, docs, invoices… ⌘K</span>
+        <span class="wf-box" style="padding:8px;margin:0;">Notifications · 3</span>
+        <span class="wf-box" style="padding:8px;margin:0;">AB</span>
+      </div>
+    </header>
+    <main>
+      <div class="wf-caption">Page Header</div>
+      <div class="wf-box">
+        <div style="font-size:22px;font-weight:600;">Contact support</div>
+        <div style="font-size:13px;">Team plan · first response within 1 business day · Current queue: 3h 20m median</div>
+      </div>
+
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div style="flex:2;">
+          <div class="wf-caption">New Ticket Form</div>
+          <div class="wf-box">
+            <div style="font-size:12px;">Subject</div>
+            <div class="wf-box" style="padding:10px;font-size:12px;">e.g. Build #4819 fails on branch fix/webhook-retry</div>
+            <div style="display:flex;gap:16px;">
+              <div style="flex:1;"><div style="font-size:12px;">Category</div><div class="wf-box" style="padding:10px;font-size:12px;">Build failure ▾</div></div>
+              <div style="flex:1;"><div style="font-size:12px;">Severity</div><div class="wf-box" style="padding:10px;font-size:12px;">S2 — degraded ▾</div></div>
+              <div style="flex:1;"><div style="font-size:12px;">Project</div><div class="wf-box" style="padding:10px;font-size:12px;">acme-platform ▾</div></div>
+            </div>
+            <div style="font-size:12px;">Affected deployment</div>
+            <div class="wf-box" style="padding:10px;font-size:12px;">Build # or deployment URL</div>
+            <div style="font-size:12px;">Description — steps to reproduce, expected vs actual</div>
+            <div class="wf-box" style="padding:10px;font-size:12px;min-height:110px;">Multi-line text area placeholder</div>
+            <div class="wf-box dashed" style="padding:20px;font-size:12px;text-align:center;">Drag build logs or screenshots here · max 25 MB</div>
+            <div style="display:flex;gap:8px;align-items:center;font-size:12px;margin-top:12px;">
+              <span class="wf-box" style="margin:0;padding:10px 16px;">Submit ticket</span>
+              <span class="wf-box" style="margin:0;padding:10px 16px;">Save draft</span>
+              <span>Attach diagnostics bundle automatically</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex:1;">
+          <div class="wf-caption">Direct Channels</div>
+          <div class="wf-box" style="font-size:12px;line-height:2.1;">
+            Email · support@relaydeploy.com<br>
+            Slack Connect · #acme-relay-support<br>
+            Security disclosures · security@relaydeploy.com<br>
+            Billing questions · billing@relaydeploy.com<br>
+            Phone (Enterprise only) · +1 415 555 0148
+          </div>
+
+          <div class="wf-caption" style="margin-top:16px;">System Status</div>
+          <div class="wf-box" style="font-size:12px;line-height:2.1;">
+            Build pipeline · Operational<br>
+            Edge network · Operational<br>
+            Dashboard API · Degraded — elevated latency in eu-west-1<br>
+            Webhooks · Operational<br>
+            Full history at status.relaydeploy.com
+          </div>
+
+          <div class="wf-caption" style="margin-top:16px;">Offices</div>
+          <div class="wf-box dashed" style="height:110px;font-size:12px;">Map placeholder · San Francisco (HQ) · Berlin · Bengaluru</div>
+        </div>
+      </div>
+
+      <div class="wf-caption">Your Open Tickets — Table</div>
+      <div class="wf-box">
+        <div style="font-size:12px;font-weight:600;border-bottom:1px solid #bbb;padding-bottom:8px;">Ticket # · Subject · Severity · Assignee · Last update · Status</div>
+        <div style="font-size:12px;line-height:2.2;">
+          SUP-3182 · Preview URL 404 after custom domain change · S3 · Priya S. · 2h ago · Awaiting your reply<br>
+          SUP-3170 · Log drain to Datadog dropping events · S2 · Marcus R. · 1d ago · In progress<br>
+          SUP-3149 · Invoice INV-2026-0577 refund request · S4 · Billing team · 4d ago · Resolved
+        </div>
+      </div>
+
+      <div class="wf-caption">Empty State — Closed Tickets This Quarter</div>
+      <div class="wf-box dashed" style="text-align:center;padding:32px;">No closed tickets in Q3 2026 yet.<br><span style="font-size:12px;">View all-time ticket archive</span></div>
+    </main>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="page-mode" content="skeleton">
+<title>Cortex — Admin Console (Wireframe)</title>
+<style>
+.wireframe *{background:transparent!important;color:#555!important;border-color:#bbb!important;box-shadow:none!important;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif!important;}
+.wireframe .wf-box{border:1px solid #bbb;padding:16px;margin:8px 0;background:#fafafa;}
+.wireframe .wf-box.dashed{border-style:dashed;background:transparent;}
+.wireframe .wf-caption{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:6px;}
+.wireframe nav.side{width:200px;border-right:1px solid #ddd;padding:16px;background:#fafafa;}
+.wireframe nav.side a{display:block;padding:8px 10px;color:#555;text-decoration:none;font-size:13px;}
+.wireframe nav.side a.active{background:#eee;font-weight:600;}
+.wireframe header.top{padding:12px 20px;border-bottom:1px solid #ddd;background:#fafafa;}
+.wireframe main{flex:1;padding:20px;overflow:auto;}
+.wireframe .app-shell{display:flex;min-height:100vh;}
+.wireframe table{width:100%;border-collapse:collapse;font-size:12px;}
+.wireframe th,.wireframe td{text-align:left;padding:10px 8px;border-bottom:1px solid #ddd;}
+.wireframe th{font-size:9px;letter-spacing:.14em;text-transform:uppercase;}
+</style>
+</head>
+<body class="wireframe">
+<div class="app-shell">
+
+  <nav class="side">
+    <div class="wf-caption">Workspace</div>
+    <div class="wf-box" style="padding:10px;font-size:12px;">CORTEX &nbsp;·&nbsp; Acme Corp (self-hosted) &nbsp;▾</div>
+    <div class="wf-caption" style="margin-top:16px;">Primary Nav</div>
+    <a href="./home.html">Home</a>
+    <a href="./search.html">Search</a>
+    <a href="./decisions-timeline.html">Decisions Timeline</a>
+    <a href="./admin-console.html" class="active">Admin Console</a>
+    <a href="./experts.html">Experts</a>
+    <div class="wf-caption" style="margin-top:16px;">Spaces</div>
+    <div class="wf-box" style="padding:10px;font-size:12px;">Platform Eng<br>Billing Runbooks<br>Q3 Launch</div>
+    <div class="wf-caption" style="margin-top:16px;">Account</div>
+    <div class="wf-box" style="padding:10px;font-size:12px;">A. Bhattacharya · IT Admin role<br>Settings · Sign out</div>
+  </nav>
+
+  <div style="flex:1;display:flex;flex-direction:column;min-width:0;">
+
+    <header class="top">
+      <div class="wf-caption">Topbar — Global Ask + Command Palette</div>
+      <div style="display:flex;gap:12px;align-items:center;">
+        <div class="wf-box" style="flex:1;margin:0;padding:10px;font-size:12px;">Ask Cortex anything…&nbsp; ( / to focus )</div>
+        <div class="wf-box" style="margin:0;padding:10px;font-size:12px;">⌘K</div>
+        <div class="wf-box" style="margin:0;padding:10px;font-size:12px;">Scope: All sources ▾</div>
+        <div class="wf-box dashed" style="margin:0;padding:10px;font-size:12px;">Avatar</div>
+      </div>
+    </header>
+
+    <main>
+      <div class="wf-caption">Admin Sub-Tabs</div>
+      <div class="wf-box" style="display:flex;gap:8px;flex-wrap:wrap;">
+        <span class="wf-box" style="margin:0;padding:6px 12px;font-size:12px;font-weight:600;">Connectors</span>
+        <span class="wf-box" style="margin:0;padding:6px 12px;font-size:12px;">Sync Health</span>
+        <span class="wf-box" style="margin:0;padding:6px 12px;font-size:12px;">Permission Audit</span>
+        <span class="wf-box" style="margin:0;padding:6px 12px;font-size:12px;">Usage Analytics</span>
+        <span class="wf-box" style="margin:0;padding:6px 12px;font-size:12px;">Models</span>
+        <span class="wf-box" style="margin:0;padding:6px 12px;font-size:12px;">Redaction / DLP</span>
+      </div>
+
+      <div class="wf-caption">Fleet Stat Row</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <div class="wf-box" style="flex:1;min-width:150px;"><div class="wf-caption">Connectors live</div><div style="font-size:28px;">11</div><div style="font-size:11px;">9 green · 1 amber · 1 red</div></div>
+        <div class="wf-box" style="flex:1;min-width:150px;"><div class="wf-caption">Chunks indexed</div><div style="font-size:28px;">24,318,904</div><div style="font-size:11px;">+417,206 in 7 days</div></div>
+        <div class="wf-box" style="flex:1;min-width:150px;"><div class="wf-caption">Median freshness</div><div style="font-size:28px;">11 m</div><div style="font-size:11px;">worst source 3 h 12 m</div></div>
+        <div class="wf-box" style="flex:1;min-width:150px;"><div class="wf-caption">Retrieval p95</div><div style="font-size:28px;">612 ms</div><div style="font-size:11px;">SLO 700 ms</div></div>
+        <div class="wf-box" style="flex:1;min-width:150px;"><div class="wf-caption">GPU spend MTD</div><div style="font-size:28px;">$5,841</div><div style="font-size:11px;">2×H100 + video hours</div></div>
+      </div>
+
+      <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;">
+        <div style="flex:2;min-width:340px;">
+          <div class="wf-caption">Connector Grid — Logo · Status · Last Sync · Items</div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <div class="wf-box" style="flex:1;min-width:200px;">
+              <div class="wf-box dashed" style="width:32px;height:32px;padding:0;margin:0;"></div>
+              <div style="font-size:14px;">Slack</div>
+              <div style="font-size:12px;">● Healthy · last sync 4 m ago</div>
+              <div style="font-size:12px;">1,204,338 messages · 412 channels</div>
+              <div class="wf-box dashed" style="font-size:11px;">Sparkline — 14-day sync volume</div>
+            </div>
+            <div class="wf-box" style="flex:1;min-width:200px;">
+              <div class="wf-box dashed" style="width:32px;height:32px;padding:0;margin:0;"></div>
+              <div style="font-size:14px;">Google Drive</div>
+              <div style="font-size:12px;">● Healthy · last sync 9 m ago</div>
+              <div style="font-size:12px;">88,417 files · 3 shared drives</div>
+              <div class="wf-box dashed" style="font-size:11px;">Sparkline placeholder</div>
+            </div>
+            <div class="wf-box" style="flex:1;min-width:200px;">
+              <div class="wf-box dashed" style="width:32px;height:32px;padding:0;margin:0;"></div>
+              <div style="font-size:14px;">Zoom (Video / Meetings)</div>
+              <div style="font-size:12px;">▲ Degraded · last sync 3 h 12 m ago</div>
+              <div style="font-size:12px;">6,041 recordings · 148 transcription jobs queued</div>
+              <div class="wf-box dashed" style="font-size:11px;">Sparkline placeholder</div>
+            </div>
+            <div class="wf-box" style="flex:1;min-width:200px;">
+              <div class="wf-box dashed" style="width:32px;height:32px;padding:0;margin:0;"></div>
+              <div style="font-size:14px;">Jira</div>
+              <div style="font-size:12px;">✕ Failing · OAuth token expired 21 h ago</div>
+              <div style="font-size:12px;">0 items since 30 Jul · error JIRA_401_REAUTH</div>
+              <div class="wf-box" style="display:inline-block;padding:6px 12px;font-size:11px;">Reconnect OAuth</div>
+            </div>
+            <div class="wf-box" style="flex:1;min-width:200px;">
+              <div class="wf-box dashed" style="width:32px;height:32px;padding:0;margin:0;"></div>
+              <div style="font-size:14px;">GitHub Enterprise</div>
+              <div style="font-size:12px;">● Healthy · last sync 2 m ago</div>
+              <div style="font-size:12px;">214 repos · 61,882 PRs</div>
+            </div>
+            <div class="wf-box dashed" style="flex:1;min-width:200px;text-align:center;padding:28px;">
+              <div style="font-size:13px;">Add connector</div>
+              <div style="font-size:11px;">Confluence · Notion · Teams · GitLab · Salesforce · Figma · custom SDK</div>
+            </div>
+          </div>
+
+          <div class="wf-caption" style="margin-top:16px;">Permission Audit Log — Actor · Query · Docs Considered · Docs Withheld · Verdict · Time</div>
+          <div class="wf-box" style="padding:0;">
+            <table>
+              <tr><th>Actor</th><th>Query</th><th>Considered</th><th>Withheld</th><th>Verdict</th><th>Time</th></tr>
+              <tr><td>r.nayak@acme</td><td>“FY27 comp bands”</td><td>1,904</td><td>1,904</td><td>Abstained — no access</td><td>09:14</td></tr>
+              <tr><td>d.okafor@acme</td><td>“Northwind 429 fix”</td><td>612</td><td>18</td><td>Answered · 7 citations</td><td>09:02</td></tr>
+              <tr><td>svc-mcp-ide</td><td>“billing runbook”</td><td>244</td><td>0</td><td>Answered · 3 citations</td><td>08:57</td></tr>
+              <tr><td>m.halvorsen@acme</td><td>“Q3 launch risks”</td><td>1,118</td><td>41</td><td>Answered · 9 citations</td><td>08:41</td></tr>
+            </table>
+          </div>
+          <div style="font-size:11px;">Red-team parity suite: 4,000 probes · 0 unauthorized leaks · last run 31 Jul 04:00</div>
+        </div>
+
+        <div style="flex:1;min-width:240px;">
+          <div class="wf-caption">Model Configuration</div>
+          <div class="wf-box" style="font-size:12px;">
+            Answer LLM · BYO-API (Claude / self-hosted) ▾<br>
+            Embeddings · bge-m3 · 1024-d<br>
+            Reranker · Rust service v0.6.2<br>
+            Transcription · WhisperX self-host<br>
+            Fallback · queue &amp; retry, bounded
+          </div>
+
+          <div class="wf-caption" style="margin-top:16px;">Redaction &amp; DLP Rules</div>
+          <div class="wf-box" style="font-size:12px;">
+            PII: emails, phone · mask in answers<br>
+            Secrets regex · 6 patterns active<br>
+            Excluded spaces · #people-ops, HR Drive<br>
+            Retention · video transcripts 24 months
+          </div>
+
+          <div class="wf-caption" style="margin-top:16px;">Error State Example</div>
+          <div class="wf-box dashed" style="font-size:12px;">
+            Backfill paused — Slack rate limit (Tier 3) hit at 11:42.<br>Queue drains in ~6 h.
+            <div class="wf-box" style="display:inline-block;padding:6px 12px;font-size:11px;">View queue</div>
+          </div>
+
+          <div class="wf-caption" style="margin-top:16px;">Usage Analytics</div>
+          <div class="wf-box" style="font-size:12px;">
+            Weekly cited answers accepted / user · 6.4<br>
+            WAU / MAU · 57%<br>
+            Citation accuracy (sampled) · 93%<br>
+            Abstention correctness · 88%
+            <div class="wf-box dashed" style="font-size:11px;">Line chart placeholder — 12 weeks</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</body>
+</html>

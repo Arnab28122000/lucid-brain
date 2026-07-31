@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="page-mode" content="skeleton">
+<title>Docs — Wireframe</title>
+<style>
+.wireframe *{background:transparent!important;color:#555!important;border-color:#bbb!important;box-shadow:none!important;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif!important;}
+.wireframe .wf-box{border:1px solid #bbb;padding:16px;margin:8px 0;background:#fafafa;}
+.wireframe .wf-box.dashed{border-style:dashed;background:transparent;}
+.wireframe .wf-caption{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:6px;}
+.wireframe nav.side{width:200px;border-right:1px solid #ddd;padding:16px;background:#fafafa;}
+.wireframe nav.side a{display:block;padding:8px 10px;color:#555;text-decoration:none;font-size:13px;}
+.wireframe nav.side a.active{background:#eee;font-weight:600;}
+.wireframe header.top{padding:12px 20px;border-bottom:1px solid #ddd;background:#fafafa;}
+.wireframe main{flex:1;padding:20px;overflow:auto;}
+.wireframe .app-shell{display:flex;min-height:100vh;}
+</style>
+</head>
+<body class="wireframe">
+<div class="app-shell">
+  <nav class="side">
+    <div class="wf-caption">Workspace</div>
+    <div class="wf-box" style="padding:10px;font-size:12px;">Relay Deploy ▾<br>acme-platform</div>
+    <div class="wf-caption" style="margin-top:16px;">Primary Nav</div>
+    <a href="./home.html">Home</a>
+    <a href="./features.html">Features</a>
+    <a href="./pricing.html">Pricing</a>
+    <a href="./docs.html" class="active">Docs</a>
+    <a href="./contact.html">Contact</a>
+    <div class="wf-caption" style="margin-top:16px;">Account</div>
+    <div class="wf-box" style="padding:10px;font-size:12px;">AB · arnab@acme.io<br>Team plan · 4 seats</div>
+  </nav>
+  <div style="flex:1;display:flex;flex-direction:column;">
+    <header class="top">
+      <div class="wf-caption">Topbar</div>
+      <div style="display:flex;gap:16px;align-items:center;font-size:13px;">
+        <span>Docs / Deployments / Rollback</span>
+        <span class="wf-box" style="flex:1;padding:8px;margin:0;">Search deploys, docs, invoices… ⌘K</span>
+        <span class="wf-box" style="padding:8px;margin:0;">Notifications · 3</span>
+        <span class="wf-box" style="padding:8px;margin:0;">AB</span>
+      </div>
+    </header>
+    <main style="display:flex;gap:16px;align-items:flex-start;">
+      <div style="width:200px;">
+        <div class="wf-caption">Docs Tree</div>
+        <div class="wf-box" style="font-size:12px;line-height:2.1;">
+          <strong>Getting started</strong><br>
+          Install the CLI<br>
+          Link a repository<br>
+          First deployment<br>
+          <strong style="display:block;margin-top:10px;">Deployments</strong>
+          Build pipeline<br>
+          Preview URLs<br>
+          <strong>Rollback</strong><br>
+          Environment variables<br>
+          <strong style="display:block;margin-top:10px;">Edge &amp; caching</strong>
+          Cache rules<br>
+          Stale-while-revalidate<br>
+          <strong style="display:block;margin-top:10px;">API reference</strong>
+          Deployments API<br>
+          Domains API<br>
+          Webhooks
+        </div>
+      </div>
+
+      <div style="flex:1;">
+        <div class="wf-caption">Article Header</div>
+        <div class="wf-box">
+          <div style="font-size:12px;">Deployments · Updated 14 Jul 2026 · 6 min read</div>
+          <div style="font-size:24px;font-weight:600;margin-top:6px;">Rolling back a production deployment</div>
+          <div style="font-size:13px;">Promote a previously built deployment back to production without triggering a rebuild.</div>
+        </div>
+
+        <div class="wf-caption">Article Body — Prose</div>
+        <div class="wf-box" style="font-size:13px;line-height:1.8;">
+          <strong>Before you begin</strong><br>
+          You need the Deploy role or higher on acme-platform. Rollback is available on Team and Enterprise plans.<br><br>
+          <strong>1. Find the target build</strong><br>
+          Open Home → Recent deployments and locate the build number you want to restore. Only builds with status <em>Ready</em> can be promoted.<br><br>
+          <strong>2. Promote the build</strong><br>
+          Select the build, then choose “Promote to production”. The existing artifact is re-pointed at the production alias; no new build minutes are consumed.<br><br>
+          <strong>3. Verify</strong><br>
+          Check that the production alias resolves to the promoted build number and that health checks pass within 60 seconds.
+        </div>
+
+        <div class="wf-caption">Code Sample Block</div>
+        <div class="wf-box dashed" style="font-size:12px;line-height:1.9;">
+          Tabs: CLI · REST · SDK<br>
+          $ relay rollback --project acme-platform --to 4816<br>
+          ✓ Promoted build #4816 to production in 11s<br>
+          ✓ Alias acme.io → dpl_4816 · health check passed
+        </div>
+
+        <div class="wf-caption">Parameters Table</div>
+        <div class="wf-box">
+          <div style="font-size:12px;font-weight:600;border-bottom:1px solid #bbb;padding-bottom:8px;">Parameter · Type · Required · Description</div>
+          <div style="font-size:12px;line-height:2.2;">
+            project · string · yes · Project slug, e.g. acme-platform<br>
+            to · integer · yes · Target build number to promote<br>
+            skipHealthCheck · boolean · no · Bypass the 60s health gate<br>
+            reason · string · no · Recorded in the audit log
+          </div>
+        </div>
+
+        <div class="wf-caption">Callout — Note</div>
+        <div class="wf-box dashed" style="font-size:13px;">Note: rollback does not revert environment variables. Change those in Settings → Environment before promoting an older build.</div>
+
+        <div class="wf-caption">Page Footer — Feedback &amp; Next</div>
+        <div class="wf-box" style="display:flex;gap:16px;font-size:12px;">
+          <span style="flex:1;">Was this page helpful? Yes / No</span>
+          <span>← Preview URLs</span>
+          <span>Environment variables →</span>
+        </div>
+      </div>
+
+      <div style="width:200px;">
+        <div class="wf-caption">On This Page</div>
+        <div class="wf-box" style="font-size:12px;line-height:2.1;">
+          Before you begin<br>
+          1. Find the target build<br>
+          2. Promote the build<br>
+          3. Verify<br>
+          Parameters<br>
+          Audit log entries<br>
+          Troubleshooting
+        </div>
+        <div class="wf-caption" style="margin-top:16px;">Related</div>
+        <div class="wf-box" style="font-size:12px;line-height:2.1;">
+          Deployments API reference<br>
+          Audit log retention<br>
+          Health check configuration
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</body>
+</html>

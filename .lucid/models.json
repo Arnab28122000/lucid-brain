@@ -1,0 +1,9 @@
+{
+  "global": {
+    "orchestrate": "glm-5.2",
+    "explore": "deepseek-v4-pro",
+    "visual": "kimi-k2.7-code",
+    "code": "hy3"
+  },
+  "perTab": {}
+}

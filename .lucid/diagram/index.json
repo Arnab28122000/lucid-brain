@@ -1,0 +1,43 @@
+[
+  {
+    "id": "527296a8-91ba-40fc-a302-613ae03489c2",
+    "title": "Cortex — Permissions &amp; Control Plane",
+    "updatedAt": 1785457173270,
+    "folder": ""
+  },
+  {
+    "id": "48900095-cb57-4483-bcfb-3a3c54e46503",
+    "title": "Cortex — Video &amp; Audio Pipeline",
+    "updatedAt": 1785457955240,
+    "folder": ""
+  },
+  {
+    "id": "000eb44a-21ba-4bcc-ba75-31d1d165c256",
+    "title": "Cortex — Memory & Temporal Graph",
+    "updatedAt": 1785454154728,
+    "folder": ""
+  },
+  {
+    "id": "fe19479e-a293-4aee-8440-5ccac79e79c3",
+    "title": "Cortex — Retrieval Query Path",
+    "updatedAt": 1785449120464,
+    "folder": ""
+  },
+  {
+    "id": "4d191931-db0b-4aa7-bc66-1ddd12d7028b",
+    "title": "Cortex — Ingestion Plane",
+    "updatedAt": 1785449104510,
+    "folder": ""
+  },
+  {
+    "id": "2e33ccd0-59e7-4eed-b8b7-85178a5f3880",
+    "title": "Cortex — System Architecture",
+    "updatedAt": 1785449091020,
+    "folder": ""
+  },
+  {
+    "id": "89dd4ee0-7c5b-47c5-9b56-06e9d462504c",
+    "title": "Untitled",
+    "updatedAt": 1785449075113
+  }
+]

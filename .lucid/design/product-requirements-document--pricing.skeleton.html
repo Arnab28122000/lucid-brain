@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="page-mode" content="skeleton">
+<title>Pricing — Wireframe</title>
+<style>
+.wireframe *{background:transparent!important;color:#555!important;border-color:#bbb!important;box-shadow:none!important;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif!important;}
+.wireframe .wf-box{border:1px solid #bbb;padding:16px;margin:8px 0;background:#fafafa;}
+.wireframe .wf-box.dashed{border-style:dashed;background:transparent;}
+.wireframe .wf-caption{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:6px;}
+.wireframe nav.side{width:200px;border-right:1px solid #ddd;padding:16px;background:#fafafa;}
+.wireframe nav.side a{display:block;padding:8px 10px;color:#555;text-decoration:none;font-size:13px;}
+.wireframe nav.side a.active{background:#eee;font-weight:600;}
+.wireframe header.top{padding:12px 20px;border-bottom:1px solid #ddd;background:#fafafa;}
+.wireframe main{flex:1;padding:20px;overflow:auto;}
+.wireframe .app-shell{display:flex;min-height:100vh;}
+</style>
+</head>
+<body class="wireframe">
+<div class="app-shell">
+  <nav class="side">
+    <div class="wf-caption">Workspace</div>
+    <div class="wf-box" style="padding:10px;font-size:12px;">Relay Deploy ▾<br>acme-platform</div>
+    <div class="wf-caption" style="margin-top:16px;">Primary Nav</div>
+    <a href="./home.html">Home</a>
+    <a href="./features.html">Features</a>
+    <a href="./pricing.html" class="active">Pricing</a>
+    <a href="./docs.html">Docs</a>
+    <a href="./contact.html">Contact</a>
+    <div class="wf-caption" style="margin-top:16px;">Account</div>
+    <div class="wf-box" style="padding:10px;font-size:12px;">AB · arnab@acme.io<br>Team plan · 4 seats</div>
+  </nav>
+  <div style="flex:1;display:flex;flex-direction:column;">
+    <header class="top">
+      <div class="wf-caption">Topbar</div>
+      <div style="display:flex;gap:16px;align-items:center;font-size:13px;">
+        <span>Pricing / Plan &amp; usage</span>
+        <span class="wf-box" style="flex:1;padding:8px;margin:0;">Search deploys, docs, invoices… ⌘K</span>
+        <span class="wf-box" style="padding:8px;margin:0;">Notifications · 3</span>
+        <span class="wf-box" style="padding:8px;margin:0;">AB</span>
+      </div>
+    </header>
+    <main>
+      <div class="wf-caption">Current Plan Banner</div>
+      <div class="wf-box" style="display:flex;gap:16px;align-items:center;">
+        <div style="flex:1;">
+          <div style="font-size:20px;font-weight:600;">Team — $84 / month</div>
+          <div style="font-size:13px;">4 seats × $21 · Renews 28 Aug 2026 · Card ending 4417</div>
+        </div>
+        <span class="wf-box" style="margin:0;padding:8px 12px;font-size:12px;">Change plan</span>
+        <span class="wf-box" style="margin:0;padding:8px 12px;font-size:12px;">Update payment method</span>
+      </div>
+
+      <div class="wf-caption">Billing Cycle Toggle</div>
+      <div style="display:flex;gap:8px;font-size:12px;">
+        <span class="wf-box" style="margin:0;padding:8px 14px;font-weight:600;">Monthly</span>
+        <span class="wf-box" style="margin:0;padding:8px 14px;">Annual — 2 months free</span>
+      </div>
+
+      <div class="wf-caption" style="margin-top:16px;">Plan Tiers</div>
+      <div style="display:flex;gap:16px;align-items:stretch;">
+        <div class="wf-box" style="flex:1;">
+          <div style="font-weight:600;font-size:15px;">Hobby</div>
+          <div style="font-size:26px;font-weight:600;margin:8px 0;">$0</div>
+          <div style="font-size:12px;line-height:2;">1 concurrent build<br>100 GB bandwidth / mo<br>7-day preview retention<br>Community support<br>1 member</div>
+          <div class="wf-box" style="padding:8px;font-size:12px;text-align:center;">Downgrade to Hobby</div>
+        </div>
+        <div class="wf-box" style="flex:1;">
+          <div style="font-weight:600;font-size:15px;">Team — current plan</div>
+          <div style="font-size:26px;font-weight:600;margin:8px 0;">$21 <span style="font-size:12px;font-weight:400;">/ seat / mo</span></div>
+          <div style="font-size:12px;line-height:2;">6 concurrent builds<br>1 TB bandwidth / mo<br>90-day preview retention<br>2 log drain endpoints<br>SSO on preview URLs<br>1 business day support</div>
+          <div class="wf-box" style="padding:8px;font-size:12px;text-align:center;">Manage seats</div>
+        </div>
+        <div class="wf-box" style="flex:1;">
+          <div style="font-weight:600;font-size:15px;">Enterprise</div>
+          <div style="font-size:26px;font-weight:600;margin:8px 0;">Custom</div>
+          <div style="font-size:12px;line-height:2;">24 concurrent builds<br>Committed bandwidth<br>Unlimited retention<br>Unlimited log drains<br>SAML + SCIM<br>2-hour support SLA</div>
+          <div class="wf-box" style="padding:8px;font-size:12px;text-align:center;">Talk to sales</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:16px;">
+        <div style="flex:1;">
+          <div class="wf-caption">Usage This Cycle</div>
+          <div class="wf-box">
+            <div style="font-size:12px;line-height:2.2;">
+              Bandwidth · 612 GB of 1 TB<br>
+              Build minutes · 1,410 of 6,000<br>
+              Edge invocations · 4.28M of 10M<br>
+              Image optimizations · 38,204 of 100,000<br>
+              Seats · 4 of 10
+            </div>
+            <div class="wf-box dashed" style="height:60px;">Usage bar chart placeholder · 5 metrics vs quota</div>
+          </div>
+        </div>
+        <div style="flex:1;">
+          <div class="wf-caption">Invoice History</div>
+          <div class="wf-box">
+            <div style="font-size:12px;font-weight:600;border-bottom:1px solid #bbb;padding-bottom:8px;">Invoice # · Date · Amount · Status</div>
+            <div style="font-size:12px;line-height:2.2;">
+              INV-2026-0714 · 28 Jul 2026 · $84.00 · Paid<br>
+              INV-2026-0688 · 28 Jun 2026 · $84.00 · Paid<br>
+              INV-2026-0651 · 28 May 2026 · $63.00 · Paid<br>
+              INV-2026-0619 · 28 Apr 2026 · $63.00 · Paid<br>
+              INV-2026-0577 · 28 Mar 2026 · $63.00 · Refunded
+            </div>
+            <div style="font-size:12px;margin-top:12px;">Download all as CSV</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wf-caption">Add-ons</div>
+      <div class="wf-box dashed" style="text-align:center;padding:32px;">No add-ons purchased. Extra bandwidth blocks start at $28 per 500 GB.<br><span style="font-size:12px;">Browse add-ons</span></div>
+    </main>
+  </div>
+</div>
+</body>
+</html>

@@ -1,4 +1,10 @@
 prototype/.browsers/
 prototype/node_modules/
 prototype/package-lock.json
-.lucid/
+
+# The .lucid AI workspace is shared so the next person can pick the work up.
+# These parts are not: they hold a Grafana service-account token and
+# private-instance references.
+.lucid/code/sessions.json
+.lucid/grafana/
+.lucid/dashboards/
