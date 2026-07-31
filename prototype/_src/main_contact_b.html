@@ -1,0 +1,74 @@
+
+        <section class="panel reveal" id="open-tickets" style="margin-bottom:24px;" aria-labelledby="ot-t">
+          <div class="panel-head">
+            <h2 class="panel-title" id="ot-t">Your open tickets</h2>
+            <span class="panel-sub">3 open &middot; 1 awaiting your reply</span>
+          </div>
+          <div class="toolbar">
+            <label class="search">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <input type="search" placeholder="Filter by ticket, subject or assignee&hellip;" aria-label="Filter tickets" data-filters="_H_ticket-table" data-count="_H_ticket-count" data-empty="_H_ticket-empty">
+            </label>
+            <button class="btn" type="button" data-toast="Severity filter" data-toast-detail="S2 one, S3 one, S4 one. No S1 raised this quarter.">Severity <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          </div>
+          <div class="scroll-x">
+            <table id="ticket-table">
+              <thead>
+                <tr>
+                  <th scope="col">Ticket</th>
+                  <th scope="col">Subject</th>
+                  <th scope="col">Severity</th>
+                  <th scope="col">Assignee</th>
+                  <th scope="col">Last update</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="build">SUP-3182</td>
+                  <td>Preview URL 404 after custom domain change</td>
+                  <td class="branch">S3</td>
+                  <td>Priya S.</td>
+                  <td class="branch">2h ago</td>
+                  <td><span class="pill warn">Awaiting your reply</span></td>
+                </tr>
+                <tr>
+                  <td class="build">SUP-3170</td>
+                  <td>Log drain to Datadog dropping events</td>
+                  <td class="branch">S2</td>
+                  <td>Marcus R.</td>
+                  <td class="branch">1d ago</td>
+                  <td><span class="pill info">In progress</span></td>
+                </tr>
+                <tr>
+                  <td class="build">SUP-3149</td>
+                  <td>Invoice INV-2026-0577 refund request</td>
+                  <td class="branch">S4</td>
+                  <td>Billing team</td>
+                  <td class="branch">4d ago</td>
+                  <td><span class="pill ok">Resolved</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="empty" id="ticket-empty" style="margin:16px 20px;" hidden>
+              <p>No ticket matches that filter.</p>
+              <small>Try a ticket number like SUP-3170, an assignee, or a word from the subject.</small>
+            </div>
+          </div>
+          <div class="table-foot">
+            <span>Showing <span id="ticket-count">3</span> of 3</span>
+            <span class="actions"><button class="btn pager" type="button" data-toast="Ticket archive" data-toast-detail="41 tickets since Aug 2025. Median resolution 6h 12m.">All-time archive</button></span>
+          </div>
+        </section>
+
+        <section class="reveal" id="closed-tickets" aria-labelledby="ct-t">
+          <h2 class="section-label" id="ct-t">Closed tickets this quarter</h2>
+          <div class="empty">
+            <div class="empty-mark">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 6h16v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M9 3h6v3H9zM9 12h6"/></svg>
+            </div>
+            <p>No closed tickets in Q3 2026 yet.</p>
+            <small>SUP-3149 was resolved 4 days ago and closes automatically 7 days after resolution.</small>
+            <button class="btn primary" type="button" data-toast="Archive opened" data-toast-detail="41 tickets since Aug 2025. Median resolution 6h 12m.">View all-time ticket archive</button>
+          </div>
+        </section>

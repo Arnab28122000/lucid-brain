@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="page-mode" content="designed">
+<title>__TITLE__ &mdash; Relay Deploy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/shell.css">
+__HEADEXTRA__
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app-shell">
+
+  <nav class="side" aria-label="Primary">
+    <button class="ws" type="button" aria-label="Switch workspace" data-toast="Workspace switcher" data-toast-detail="Two other workspaces: acme-marketing, acme-labs.">
+      <span class="ws-mark">RD</span>
+      <span>
+        <span class="ws-name">Relay Deploy</span><br>
+        <span class="ws-sub">acme-platform</span>
+      </span>
+      <svg class="ws-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+
+    <div>
+      <div class="nav-label">Primary Nav</div>
+      <div class="nav-list">
+__NAV__
+      </div>
+    </div>
+
+    <div class="acct">
+      <div class="nav-label">Account</div>
+      <div class="acct-row">
+        <span class="avatar" aria-hidden="true">AB</span>
+        <span style="min-width:0;">
+          <span class="acct-mail">arnab@acme.io</span><br>
+          <span class="acct-plan">Team plan &middot; 4 seats</span>
+        </span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="col">
+    <header class="top">
+      <div class="crumb">__CRUMB__</div>
+      <button class="search" type="button" data-cmdk aria-label="Open command palette">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span style="flex:1;">Search deploys, docs, invoices&hellip;</span>
+        <kbd>&#8984;K</kbd>
+      </button>
+      <button class="icon-btn" type="button" aria-label="Notifications, 3 unread" data-toast="3 unread notifications" data-toast-detail="CI failed on fix/webhook-retry &middot; eu-west-1 latency &middot; invoice INV-2026-0714 paid.">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 6-2 7-2 7h16s-2-1-2-7"/><path d="M10.5 20a2 2 0 0 0 3 0"/></svg>
+        <span class="dot">3</span>
+      </button>
+      <button class="icon-btn avatar" type="button" title="Arnab B." aria-label="Account menu for Arnab B." data-toast="Signed in as Arnab B." data-toast-detail="arnab@acme.io &middot; Owner on acme-platform.">AB</button>
+    </header>
+
+    <main id="main">
+      <div class="wrap">
+__MAIN__
+      </div>
+    </main>
+  </div>
+</div>
+
+<div class="cmdk" id="cmdk" role="dialog" aria-modal="true" aria-label="Command palette" aria-hidden="true">
+  <div class="cmdk-box">
+    <div class="cmdk-input">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6C7684" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="cmdk-input" type="text" placeholder="Jump to a page, build, or action&hellip;" role="combobox" aria-expanded="true" aria-controls="cmdk-list" aria-autocomplete="list" autocomplete="off">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="cmdk-list" id="cmdk-list" role="listbox" aria-label="Commands"></ul>
+    <div class="cmdk-foot">
+      <span>&uarr;&darr; move</span><span>&crarr; run</span><span>esc close</span>
+    </div>
+  </div>
+</div>
+
+<div class="toasts" role="status" aria-live="polite"></div>
+<script src="./assets/shell.js"></script>
+__BODYEXTRA__
+</body>
+</html>

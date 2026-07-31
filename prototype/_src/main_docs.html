@@ -1,0 +1,129 @@
+
+        <div class="docs reveal">
+
+          <aside class="doc-rail" aria-label="Documentation">
+            <h2>Documentation</h2>
+            <h3>Getting started</h3>
+            <ul>
+              <li><a href="./docs.html" data-toast="Install the CLI" data-toast-detail="npm i -g @relay/cli, then relay login.">Install the CLI</a></li>
+              <li><a href="./docs.html" data-toast="Link a repository" data-toast-detail="GitHub, GitLab and Bitbucket are supported.">Link a repository</a></li>
+              <li><a href="./docs.html" data-toast="First deployment" data-toast-detail="Push to any branch to get a preview URL.">First deployment</a></li>
+            </ul>
+            <h3>Deployments</h3>
+            <ul>
+              <li><a href="./docs.html" data-toast="Build pipeline" data-toast-detail="Install, build, and output-collection stages.">Build pipeline</a></li>
+              <li><a href="./docs.html" data-toast="Preview URLs" data-toast-detail="One URL per pull request, retained 90 days on Team.">Preview URLs</a></li>
+              <li><a href="./docs.html" aria-current="page">Rollback</a></li>
+              <li><a href="./docs.html" data-toast="Environment variables" data-toast-detail="Scoped per environment, encrypted at rest.">Environment variables</a></li>
+            </ul>
+            <h3>Edge &amp; caching</h3>
+            <ul>
+              <li><a href="./docs.html" data-toast="Cache rules" data-toast-detail="Path-level TTL evaluated at the edge.">Cache rules</a></li>
+              <li><a href="./docs.html" data-toast="Stale-while-revalidate" data-toast-detail="Serve cached, refresh in the background.">Stale-while-revalidate</a></li>
+            </ul>
+            <h3>API reference</h3>
+            <ul>
+              <li><a href="./docs.html" data-toast="Deployments API" data-toast-detail="POST /v2/deployments and 6 related endpoints.">Deployments API</a></li>
+              <li><a href="./docs.html" data-toast="Domains API" data-toast-detail="Attach, verify and alias custom domains.">Domains API</a></li>
+              <li><a href="./docs.html" data-toast="Webhooks" data-toast-detail="12 event types, HMAC-signed, 3 retries.">Webhooks</a></li>
+            </ul>
+          </aside>
+
+          <article class="prose" id="doc-article">
+            <div class="meta" style="margin-bottom:12px;">Deployments &middot; Updated 14 Jul 2026 &middot; 6 min read</div>
+            <h1 style="font-size:28px;margin-bottom:12px;">Rolling back a production deployment</h1>
+            <p style="font-size:15px;color:var(--ink-2);margin-bottom:32px;">Promote a previously built deployment back to production without triggering a rebuild.</p>
+
+            <h2 id="before">Before you begin</h2>
+            <p>You need the <strong>Deploy</strong> role or higher on <code class="inline">acme-platform</code>. Rollback is available on the Team and Enterprise plans &mdash; see <a href="./pricing.html">plan comparison</a>.</p>
+
+            <h2 id="find">1. Find the target build</h2>
+            <p>Open <a href="./home.html">Overview &rarr; Recent deployments</a> and locate the build number you want to restore. Only builds with status <strong>Ready</strong> can be promoted; archived artifacts must be rebuilt first.</p>
+
+            <h2 id="promote">2. Promote the build</h2>
+            <p>Select the build, then choose <strong>Promote to production</strong>. The existing artifact is re-pointed at the production alias, so no new build minutes are consumed.</p>
+
+            <div class="panel" style="margin:24px 0;">
+              <div class="code-tabs" role="tablist" aria-label="Rollback examples">
+                <button type="button" role="tab" aria-selected="true" data-code="cli">CLI</button>
+                <button type="button" role="tab" aria-selected="false" data-code="rest">REST</button>
+                <button type="button" role="tab" aria-selected="false" data-code="sdk">SDK</button>
+              </div>
+              <pre class="code" id="code-cli"><span class="c"># promote a prior build, no rebuild</span>
+$ relay rollback --project acme-platform --to 4816
+<span class="g">&#10003;</span> Promoted build _H_4816 to production in 11s
+<span class="g">&#10003;</span> Alias acme.io &rarr; dpl_4816 &middot; health check passed</pre>
+              <pre class="code" id="code-rest" hidden>$ curl -X POST https://api.relaydeploy.com/v2/rollback \
+    -H <span class="y">"Authorization: Bearer $RELAY_TOKEN"</span> \
+    -d <span class="y">'{"project":"acme-platform","to":4816}'</span>
+
+<span class="b">200</span> <span class="c">// dpl_4816 aliased in 11s</span></pre>
+              <pre class="code" id="code-sdk" hidden><span class="b">import</span> relay <span class="b">from</span> <span class="y">"@relay/sdk"</span>;
+
+<span class="b">await</span> relay.rollback({
+  project: <span class="y">"acme-platform"</span>,
+  to: <span class="b">4816</span>,
+  reason: <span class="y">"webhook retry regression"</span>,
+});</pre>
+              <div class="table-foot">
+                <span>Median 11s across 6 rollbacks this quarter</span>
+                <span class="actions"><button class="btn pager" type="button" data-copy="_H_code-cli">Copy</button></span>
+              </div>
+            </div>
+
+            <h2 id="verify">3. Verify</h2>
+            <p>Check that the production alias resolves to the promoted build number and that health checks pass within 60 seconds. A failed gate reverts the alias automatically.</p>
+
+            <h2 id="params">Parameters</h2>
+            <div class="panel" style="margin-bottom:24px;">
+              <div class="scroll-x">
+                <table>
+                  <thead><tr><th scope="col">Parameter</th><th scope="col">Type</th><th scope="col">Required</th><th scope="col">Description</th></tr></thead>
+                  <tbody>
+                    <tr><td class="build">project</td><td class="branch">string</td><td><span class="pill bad">Required</span></td><td>Project slug, e.g. acme-platform</td></tr>
+                    <tr><td class="build">to</td><td class="branch">integer</td><td><span class="pill bad">Required</span></td><td>Target build number to promote</td></tr>
+                    <tr><td class="build">skipHealthCheck</td><td class="branch">boolean</td><td><span class="pill idle">Optional</span></td><td>Bypass the 60s health gate</td></tr>
+                    <tr><td class="build">reason</td><td class="branch">string</td><td><span class="pill idle">Optional</span></td><td>Recorded in the audit log</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <h2 id="audit">Audit log entries</h2>
+            <p>Every rollback writes one <code class="inline">deployment.rollback</code> event containing the actor, the source and target build, and the reason string. Entries are retained for 90 days on Team.</p>
+
+            <h2 id="trouble">Troubleshooting</h2>
+            <div class="callout warn">
+              <b>Rollback does not revert environment variables.</b> Change those in Settings &rarr; Environment before promoting an older build, or the restored artifact will read the current values.
+            </div>
+
+            <div class="doc-foot">
+              <span style="font-size:13px;color:var(--ink-3);">Was this page helpful?</span>
+              <button class="btn sm" type="button" data-toast="Thanks" data-toast-detail="Logged against docs/deployments/rollback." data-toast-kind="ok">Yes</button>
+              <button class="btn sm" type="button" data-toast="Tell us what is missing" data-toast-detail="Opens a docs issue against docs/deployments/rollback.">No</button>
+              <span class="nx">
+                <a class="btn sm" href="./docs.html" data-toast="Preview URLs" data-toast-detail="Previous article in Deployments.">&larr; Preview URLs</a>
+                <a class="btn sm" href="./docs.html" data-toast="Environment variables" data-toast-detail="Next article in Deployments.">Environment variables &rarr;</a>
+              </span>
+            </div>
+          </article>
+
+          <aside class="toc" aria-label="On this page">
+            <h2>On this page</h2>
+            <ul>
+              <li><a href="_H_before" class="on">Before you begin</a></li>
+              <li><a href="_H_find">1. Find the target build</a></li>
+              <li><a href="_H_promote">2. Promote the build</a></li>
+              <li><a href="_H_verify">3. Verify</a></li>
+              <li><a href="_H_params">Parameters</a></li>
+              <li><a href="_H_audit">Audit log entries</a></li>
+              <li><a href="_H_trouble">Troubleshooting</a></li>
+            </ul>
+            <h2 style="margin-top:32px;">Related</h2>
+            <ul>
+              <li><a href="./docs.html" data-toast="Deployments API reference" data-toast-detail="POST /v2/rollback and 6 related endpoints.">Deployments API</a></li>
+              <li><a href="./pricing.html">Audit log retention</a></li>
+              <li><a href="./features.html">Health check configuration</a></li>
+            </ul>
+          </aside>
+        </div>

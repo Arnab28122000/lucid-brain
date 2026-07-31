@@ -1,0 +1,91 @@
+
+        <section class="panel reveal" id="recent-deployments" style="margin-bottom:24px;" aria-labelledby="rd-t">
+          <div class="panel-head"><h2 class="panel-title" id="rd-t">Recent deployments</h2></div>
+          <div class="toolbar">
+            <label class="search">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <input type="search" placeholder="Filter by build, branch, commit or author&hellip;" aria-label="Filter deployments" data-filters="_H_deploy-table" data-count="_H_deploy-count" data-empty="_H_deploy-empty">
+            </label>
+            <button class="btn" type="button" data-toast="Status filter" data-toast-detail="Ready 9, Failed 2, Building 1, Queued 0.">Status <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+            <button class="btn" type="button" data-toast="Branch filter" data-toast-detail="main, fix/webhook-retry, preview/pricing-v3, preview/docs-search.">Branch <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          </div>
+          <div class="scroll-x">
+            <table id="deploy-table">
+              <thead>
+                <tr>
+                  <th scope="col">Build&nbsp;_H_</th>
+                  <th scope="col">Branch</th>
+                  <th scope="col">Commit</th>
+                  <th scope="col">Author</th>
+                  <th scope="col" class="dur">Duration</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="build">_H_4821</td>
+                  <td class="branch">main</td>
+                  <td><span class="hash">a91fc3d</span><span class="msg">tighten webhook retry</span></td>
+                  <td>Arnab B.</td>
+                  <td class="dur">3m 12s</td>
+                  <td><span class="pill ready">Ready</span></td>
+                </tr>
+                <tr>
+                  <td class="build">_H_4820</td>
+                  <td class="branch">preview/pricing-v3</td>
+                  <td><span class="hash">77bd10e</span><span class="msg">new tier copy</span></td>
+                  <td>Priya S.</td>
+                  <td class="dur">4m 05s</td>
+                  <td><span class="pill ready">Ready</span></td>
+                </tr>
+                <tr>
+                  <td class="build">_H_4819</td>
+                  <td class="branch">fix/webhook-retry</td>
+                  <td><span class="hash">2ce884a</span><span class="msg">add backoff</span></td>
+                  <td>Marcus R.</td>
+                  <td class="dur">1m 44s</td>
+                  <td><span class="pill failed">Failed</span></td>
+                </tr>
+                <tr>
+                  <td class="build">_H_4818</td>
+                  <td class="branch">main</td>
+                  <td><span class="hash">b03aa71</span><span class="msg">bump edge runtime</span></td>
+                  <td>Emma C.</td>
+                  <td class="dur">3m 58s</td>
+                  <td><span class="pill ready">Ready</span></td>
+                </tr>
+                <tr>
+                  <td class="build">_H_4817</td>
+                  <td class="branch">preview/docs-search</td>
+                  <td><span class="hash">5df2019</span><span class="msg">index API refs</span></td>
+                  <td>Arnab B.</td>
+                  <td class="dur">2m 31s</td>
+                  <td><span class="pill building">Building</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="empty" id="deploy-empty" style="margin:16px 20px;" hidden>
+              <p>No deployment matches that filter.</p>
+              <small>Try a build number like 4821, a branch like main, or an author surname.</small>
+            </div>
+          </div>
+          <div class="table-foot">
+            <span>Showing <span id="deploy-count">5</span> of 142 &middot; Page 1 of 29</span>
+            <span class="actions">
+              <button class="btn pager" type="button" disabled>Previous</button>
+              <button class="btn pager" type="button" data-toast="Page 2 of 29" data-toast-detail="Builds 4816 down to 4812, 26 Jul to 24 Jul.">Next</button>
+            </span>
+          </div>
+        </section>
+
+        <section class="reveal" id="scheduled-rollouts" aria-labelledby="sr-t">
+          <h2 class="section-label" id="sr-t">Scheduled rollouts</h2>
+          <div class="empty">
+            <div class="empty-mark">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            </div>
+            <p>No rollouts scheduled for this week.</p>
+            <small>Rollout windows pause traffic shifts outside business hours.</small>
+            <button class="btn primary" type="button" data-toast="Rollout window drafted" data-toast-detail="Mon 4 Aug, 09:00 to 17:00 Europe/Berlin. Needs one approver." data-toast-kind="ok">Schedule a rollout window</button>
+          </div>
+        </section>

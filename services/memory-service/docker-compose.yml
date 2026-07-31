@@ -1,0 +1,75 @@
+# Single-node evaluation mode for the memory layer.
+#
+#   docker compose up -d
+#   curl -sX POST localhost:8087/v1/episodes \
+#     -H 'X-Cortex-Tenant-Id: acme' -H 'X-Cortex-Acl-Groups: g-eng' \
+#     -H 'Content-Type: application/json' -d @testdata/episode.json
+#
+# The LLM is not included: point MEMORY_LLM_BASE_URL at llm-gateway, at a local
+# vLLM, or at any OpenAI-compatible endpoint. Nothing else here needs a GPU.
+
+services:
+  postgres:
+    # Apache AGE ships its own Postgres image; the memory layer needs the
+    # extension only when MEMORY_GRAPH_ENABLED=true, but running it here keeps
+    # evaluation identical to production.
+    image: apache/age:latest
+    environment:
+      POSTGRES_USER: cortex
+      POSTGRES_PASSWORD: cortex
+      POSTGRES_DB: cortex
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cortex"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  nats:
+    image: nats:latest
+    command: ["-js", "-sd", "/data"]
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+    volumes:
+      - natsdata:/data
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8222/healthz"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  memory-service:
+    build: .
+    depends_on:
+      postgres:
+        condition: service_healthy
+      nats:
+        condition: service_healthy
+    environment:
+      MEMORY_ADDR: ":8087"
+      MEMORY_LOG_LEVEL: "debug"
+      MEMORY_POSTGRES_DSN: "postgres://cortex:cortex@postgres:5432/cortex?sslmode=disable"
+      MEMORY_GRAPH_ENABLED: "true"
+      # Evaluation mode applies its own schema. In production a Helm pre-install
+      # job runs the same embedded SQL once, rather than N replicas racing.
+      MEMORY_AUTO_MIGRATE: "true"
+      MEMORY_NATS_URL: "nats://nats:4222"
+      MEMORY_LLM_BASE_URL: "${MEMORY_LLM_BASE_URL:-http://host.docker.internal:8080}"
+      MEMORY_LLM_MODEL: "${MEMORY_LLM_MODEL:-cortex-extract}"
+      MEMORY_LLM_API_KEY: "${MEMORY_LLM_API_KEY:-}"
+      # The content stream is owned by the ingestion plane. On its own, the
+      # memory service has nothing to bind to, so the consumer stays off and
+      # episodes arrive over POST /v1/episodes.
+      MEMORY_CONSUMER_DISABLED: "${MEMORY_CONSUMER_DISABLED:-true}"
+    ports:
+      - "8087:8087"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  pgdata:
+  natsdata:

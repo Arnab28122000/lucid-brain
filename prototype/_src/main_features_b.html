@@ -1,0 +1,110 @@
+
+        <h2 class="section-label reveal">Capability grid</h2>
+        <div class="kpis reveal" id="capability-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="stat" data-cat="build">
+            <h3 style="font-size:14px;font-weight:600;letter-spacing:-.01em;margin:0 0 8px;">Preview deployments</h3>
+            <p style="margin:0 0 16px;font-size:13px;line-height:1.6;color:var(--ink-3);">A unique URL per pull request, torn down 90 days after merge.</p>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+              <span class="pill ok">Enabled &middot; All branches</span>
+            </div>
+            <p style="margin:12px 0 0;font-family:var(--mono);font-size:11px;color:var(--ink-3);">38 open now</p>
+          </article>
+          <article class="stat" data-cat="build">
+            <h3 style="font-size:14px;font-weight:600;letter-spacing:-.01em;margin:0 0 8px;">Build cache</h3>
+            <p style="margin:0 0 16px;font-size:13px;line-height:1.6;color:var(--ink-3);">Reuses node_modules and framework artifacts across builds.</p>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+              <span class="pill ok">Enabled &middot; 2.1 GB stored</span>
+            </div>
+            <p style="margin:12px 0 0;font-family:var(--mono);font-size:11px;color:var(--ink-3);">Saves 1m 09s median</p>
+          </article>
+          <article class="stat" data-cat="build">
+            <h3 style="font-size:14px;font-weight:600;letter-spacing:-.01em;margin:0 0 8px;">Cron functions</h3>
+            <p style="margin:0 0 16px;font-size:13px;line-height:1.6;color:var(--ink-3);">Scheduled invocations with a retry policy and dead-letter log.</p>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+              <span class="pill ok">Enabled &middot; 3 jobs defined</span>
+            </div>
+            <p style="margin:12px 0 0;font-family:var(--mono);font-size:11px;color:var(--ink-3);">Next run 02:00 UTC</p>
+          </article>
+          <article class="stat" data-cat="build">
+            <h3 style="font-size:14px;font-weight:600;letter-spacing:-.01em;margin:0 0 8px;">Monorepo build filters</h3>
+            <p style="margin:0 0 16px;font-size:13px;line-height:1.6;color:var(--ink-3);">Skip a build when the changed paths do not touch the app.</p>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+              <span class="pill ok">Enabled &middot; 4 path rules</span>
+            </div>
+            <p style="margin:12px 0 0;font-family:var(--mono);font-size:11px;color:var(--ink-3);">61 builds skipped in July</p>
+          </article>
+          <article class="stat" data-cat="edge">
+            <h3 style="font-size:14px;font-weight:600;letter-spacing:-.01em;margin:0 0 8px;">Edge cache rules</h3>
+            <p style="margin:0 0 16px;font-size:13px;line-height:1.6;color:var(--ink-3);">Path-level TTL and stale-while-revalidate, evaluated at the edge.</p>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+              <span class="pill ok">Enabled &middot; 4 regions</span>
+            </div>
+            <p style="margin:12px 0 0;font-family:var(--mono);font-size:11px;color:var(--ink-3);">12 rules configured</p>
+          </article>
+          <article class="stat" data-cat="edge">
+            <h3 style="font-size:14px;font-weight:600;letter-spacing:-.01em;margin:0 0 8px;">Stale-while-revalidate</h3>
+            <p style="margin:0 0 16px;font-size:13px;line-height:1.6;color:var(--ink-3);">Serve the cached response while the origin refreshes in the background.</p>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+              <span class="pill ok">Enabled &middot; 8 paths</span>
+            </div>
+            <p style="margin:12px 0 0;font-family:var(--mono);font-size:11px;color:var(--ink-3);">94.2 percent hit rate</p>
+          </article>
+          <article class="stat" data-cat="edge">
+            <h3 style="font-size:14px;font-weight:600;letter-spacing:-.01em;margin:0 0 8px;">Image optimization</h3>
+            <p style="margin:0 0 16px;font-size:13px;line-height:1.6;color:var(--ink-3);">On-the-fly resize, AVIF and WebP negotiation, 30-day edge cache.</p>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+              <span class="pill ok">Enabled &middot; 38,204 this cycle</span>
+            </div>
+            <p style="margin:12px 0 0;font-family:var(--mono);font-size:11px;color:var(--ink-3);">Quota 100,000</p>
+          </article>
+          <article class="stat" data-cat="edge">
+            <h3 style="font-size:14px;font-weight:600;letter-spacing:-.01em;margin:0 0 8px;">Multi-region failover</h3>
+            <p style="margin:0 0 16px;font-size:13px;line-height:1.6;color:var(--ink-3);">Shift traffic to iad1 when fra1 health checks fail twice in a row.</p>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+              <span class="pill warn">Preview &middot; Opt in</span>
+            </div>
+            <p style="margin:12px 0 0;font-family:var(--mono);font-size:11px;color:var(--ink-3);">Untested in production</p>
+          </article>
+          <article class="stat" data-cat="obs">
+            <h3 style="font-size:14px;font-weight:600;letter-spacing:-.01em;margin:0 0 8px;">Log drains</h3>
+            <p style="margin:0 0 16px;font-size:13px;line-height:1.6;color:var(--ink-3);">Stream runtime logs to Datadog, S3, or a custom HTTPS endpoint.</p>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+              <span class="pill idle">Not enabled &middot; Requires Team plan</span>
+            </div>
+            <p style="margin:12px 0 0;font-family:var(--mono);font-size:11px;color:var(--ink-3);">2 endpoints on Team</p>
+          </article>
+          <article class="stat" data-cat="obs">
+            <h3 style="font-size:14px;font-weight:600;letter-spacing:-.01em;margin:0 0 8px;">Runtime traces</h3>
+            <p style="margin:0 0 16px;font-size:13px;line-height:1.6;color:var(--ink-3);">Per-invocation spans with cold-start attribution and p99 breakdown.</p>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+              <span class="pill ok">Enabled &middot; 5 percent sample</span>
+            </div>
+            <p style="margin:12px 0 0;font-family:var(--mono);font-size:11px;color:var(--ink-3);">p99 412ms</p>
+          </article>
+          <article class="stat" data-cat="obs">
+            <h3 style="font-size:14px;font-weight:600;letter-spacing:-.01em;margin:0 0 8px;">Web vitals sampling</h3>
+            <p style="margin:0 0 16px;font-size:13px;line-height:1.6;color:var(--ink-3);">Real-user LCP, INP and CLS collected from 1 in 20 sessions.</p>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+              <span class="pill ok">Enabled &middot; 1/20 sessions</span>
+            </div>
+            <p style="margin:12px 0 0;font-family:var(--mono);font-size:11px;color:var(--ink-3);">LCP 1.4s at p75</p>
+          </article>
+          <article class="stat" data-cat="sec">
+            <h3 style="font-size:14px;font-weight:600;letter-spacing:-.01em;margin:0 0 8px;">Password-protected previews</h3>
+            <p style="margin:0 0 16px;font-size:13px;line-height:1.6;color:var(--ink-3);">Gate preview URLs behind a shared credential or your IdP.</p>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+              <span class="pill warn">Preview &middot; Opt in</span>
+            </div>
+            <p style="margin:12px 0 0;font-family:var(--mono);font-size:11px;color:var(--ink-3);">Not yet enforced</p>
+          </article>
+          <article class="stat cap-wide" data-cat="sec">
+            <div class="cap-copy">
+              <h3 style="font-size:14px;font-weight:600;letter-spacing:-.01em;margin:0 0 4px;">SAML SSO and SCIM</h3>
+              <p style="margin:0;font-size:13px;line-height:1.6;color:var(--ink-3);">Directory-synced membership with automatic seat de-provisioning. The only capability on this page that acme-platform cannot self-serve.</p>
+            </div>
+            <div class="cap-side">
+              <span class="pill idle">Not enabled &middot; Enterprise only</span>
+              <a class="btn" href="./contact.html">Talk to sales</a>
+            </div>
+          </article>
+        </div>

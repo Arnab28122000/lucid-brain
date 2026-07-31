@@ -1,0 +1,65 @@
+
+        <div class="page-head reveal">
+          <div>
+            <h1>Features enabled on acme-platform</h1>
+            <div class="meta">14 available &middot; <span class="live">9 enabled</span> &middot; 2 in preview &middot; <span class="risk">3 require Team plan</span></div>
+          </div>
+          <div class="actions">
+            <button class="btn" type="button" data-toast="Scope: acme-platform" data-toast-detail="Feature flags apply per project. acme-marketing and acme-labs are configured separately.">Scope: acme-platform <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+            <a class="btn" href="./docs.html">Read the docs</a>
+            <a class="btn primary" href="./pricing.html">Compare plans</a>
+          </div>
+        </div>
+
+        <div class="tabs reveal" role="tablist" aria-label="Capability categories" data-tabs="_H_capability-grid" data-live="cap-live">
+          <button class="tab" type="button" role="tab" data-filter="all" aria-selected="true">All <span class="n">14</span></button>
+          <button class="tab" type="button" role="tab" data-filter="build" aria-selected="false">Build &amp; Deploy <span class="n">5</span></button>
+          <button class="tab" type="button" role="tab" data-filter="edge" aria-selected="false">Edge &amp; Caching <span class="n">4</span></button>
+          <button class="tab" type="button" role="tab" data-filter="obs" aria-selected="false">Observability <span class="n">3</span></button>
+          <button class="tab" type="button" role="tab" data-filter="sec" aria-selected="false">Security <span class="n">2</span></button>
+          <span class="sr-only" id="cap-live" aria-live="polite">14 shown</span>
+        </div>
+
+        <section class="panel reveal" id="featured-capability" style="margin-bottom:24px;" aria-labelledby="fc-t">
+          <div class="split" style="margin:0;gap:0;">
+            <div class="panel-body" style="padding:32px;">
+              <span class="pill ok" style="margin-bottom:16px;">Enabled</span>
+              <h2 id="fc-t" style="font-size:22px;line-height:1.2;letter-spacing:-.02em;font-weight:600;margin:12px 0 12px;">Instant rollback</h2>
+              <p style="margin:0 0 16px;font-size:14px;line-height:1.7;color:var(--ink-2);max-width:52ch;">Promote any prior build back to production in a single action. Rollback keeps the original build artifact, so no rebuild is required &mdash; and no build minutes are consumed.</p>
+              <p style="margin:0 0 24px;font-family:var(--mono);font-size:12px;color:var(--ink-3);">Median rollback on acme-platform: <b style="color:var(--ok);font-weight:500;">11 seconds</b> across 6 events this quarter.</p>
+              <dl class="dl" style="max-width:340px;margin-bottom:24px;">
+                <dt>Scope</dt><dd>Production + Preview</dd>
+                <dt>Owner</dt><dd>Platform team</dd>
+                <dt>Last used</dt><dd>1h ago by Priya S.</dd>
+              </dl>
+              <div class="actions" style="margin:0;">
+                <button class="btn primary" type="button" data-toast="Rollback settings" data-toast-detail="Health gate 60s, audit reason required, auto-revert on 5xx above 2 percent.">Configure rollback</button>
+                <a class="btn" href="./docs.html">View 6 rollback events</a>
+              </div>
+            </div>
+            <div style="border-left:1px solid var(--line-soft);background:var(--paper);padding:24px;display:flex;flex-direction:column;justify-content:center;">
+              <div class="section-label">Deployments &mdash; promote action</div>
+              <div class="panel" style="border-radius:var(--r-md);overflow:hidden;">
+                <div style="padding:10px 12px;border-bottom:1px solid var(--line-soft);display:flex;gap:8px;align-items:center;">
+                  <span style="font-family:var(--mono);font-size:11px;color:var(--ink-3);">acme-platform / deployments</span>
+                </div>
+                <div style="padding:8px 12px;display:flex;gap:12px;align-items:center;border-bottom:1px solid var(--line-soft);">
+                  <span style="font-family:var(--mono);font-size:12px;">_H_4821</span>
+                  <span class="pill ready" style="font-size:10px;">Ready</span>
+                  <span style="margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--ink-3);">now</span>
+                </div>
+                <div style="padding:8px 12px;display:flex;gap:12px;align-items:center;border-bottom:1px solid var(--line-soft);background:var(--accent-soft);outline:1px solid var(--accent);outline-offset:-1px;">
+                  <span style="font-family:var(--mono);font-size:12px;color:var(--accent-ink);">_H_4816</span>
+                  <span class="pill ready" style="font-size:10px;">Ready</span>
+                  <span style="margin-left:auto;font-size:11px;font-weight:600;color:var(--accent-ink);">Promote to production</span>
+                </div>
+                <div style="padding:8px 12px;display:flex;gap:12px;align-items:center;opacity:.6;">
+                  <span style="font-family:var(--mono);font-size:12px;">_H_4812</span>
+                  <span class="pill idle" style="font-size:10px;">Archived</span>
+                  <span style="margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--ink-3);">6d</span>
+                </div>
+              </div>
+              <p style="margin:12px 0 0;font-size:12px;color:var(--ink-3);line-height:1.6;">Selecting a Ready build re-points the production alias. Archived builds must be rebuilt first.</p>
+            </div>
+          </div>
+        </section>

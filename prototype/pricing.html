@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="page-mode" content="designed">
+<title>Pricing &mdash; Relay Deploy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/shell.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app-shell">
+
+  <nav class="side" aria-label="Primary">
+    <button class="ws" type="button" aria-label="Switch workspace" data-toast="Workspace switcher" data-toast-detail="Two other workspaces: acme-marketing, acme-labs.">
+      <span class="ws-mark">RD</span>
+      <span>
+        <span class="ws-name">Relay Deploy</span><br>
+        <span class="ws-sub">acme-platform</span>
+      </span>
+      <svg class="ws-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+
+    <div>
+      <div class="nav-label">Primary Nav</div>
+      <div class="nav-list">
+        <a href="./home.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 10.5 12 4l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+          Home
+        </a>
+        <a href="./features.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 16l9 5 9-5"/></svg>
+          Features<span class="tail">14</span>
+        </a>
+        <a href="./pricing.html" class="active" aria-current="page">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.6 13.4 12 22l-9-9V4h9z"/><circle cx="7.5" cy="7.5" r="1.4"/></svg>
+          Pricing
+        </a>
+        <a href="./docs.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4h9a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-1a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h2z"/></svg>
+          Docs
+        </a>
+        <a href="./contact.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+          Contact<span class="tail">3</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="acct">
+      <div class="nav-label">Account</div>
+      <div class="acct-row">
+        <span class="avatar" aria-hidden="true">AB</span>
+        <span style="min-width:0;">
+          <span class="acct-mail">arnab@acme.io</span><br>
+          <span class="acct-plan">Team plan &middot; 4 seats</span>
+        </span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="col">
+    <header class="top">
+      <div class="crumb">Pricing / <b>Plan &amp; usage</b></div>
+      <button class="search" type="button" data-cmdk aria-label="Open command palette">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span style="flex:1;">Search deploys, docs, invoices&hellip;</span>
+        <kbd>&#8984;K</kbd>
+      </button>
+      <button class="icon-btn" type="button" aria-label="Notifications, 3 unread" data-toast="3 unread notifications" data-toast-detail="CI failed on fix/webhook-retry &middot; eu-west-1 latency &middot; invoice INV-2026-0714 paid.">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 6-2 7-2 7h16s-2-1-2-7"/><path d="M10.5 20a2 2 0 0 0 3 0"/></svg>
+        <span class="dot">3</span>
+      </button>
+      <button class="icon-btn avatar" type="button" title="Arnab B." aria-label="Account menu for Arnab B." data-toast="Signed in as Arnab B." data-toast-detail="arnab@acme.io &middot; Owner on acme-platform.">AB</button>
+    </header>
+
+    <main id="main">
+      <div class="wrap">
+
+        <div class="page-head reveal">
+          <div>
+            <h1>Team &mdash; <span id="plan-total">$84</span> / month</h1>
+            <div class="meta">4 seats &times; <span id="plan-seat">$21</span> &middot; Renews 28 Aug 2026 &middot; Card ending 4417</div>
+          </div>
+          <div class="actions">
+            <button class="btn" type="button" data-toast="Payment method" data-toast-detail="Visa ending 4417, expires 09/2028. Billing contact billing@acme.io.">Update payment method</button>
+            <button class="btn primary" type="button" data-toast="Plan change" data-toast-detail="Downgrades take effect at the end of the cycle, 28 Aug 2026." data-toast-kind="ok">Change plan</button>
+          </div>
+        </div>
+
+        <div class="reveal" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
+          <div class="seg" role="group" aria-label="Billing cycle" data-seg="cycle">
+            <button type="button" data-value="monthly" aria-pressed="true">Monthly</button>
+            <button type="button" data-value="annual" aria-pressed="false">Annual &mdash; 2 months free</button>
+          </div>
+          <span class="meta" id="cycle-note">Switching to annual saves $168 a year at 4 seats.</span>
+        </div>
+
+        <div class="kpis reveal" id="plan-tiers" style="grid-template-columns:repeat(3,1fr);align-items:stretch;">
+          <article class="stat" style="display:flex;flex-direction:column;">
+            <h2 style="font-size:14px;font-weight:600;margin:0 0 12px;">Hobby</h2>
+            <div class="stat-num" data-price-monthly="$0" data-price-annual="$0">$0</div>
+            <p class="meta" style="margin:0 0 16px;">Forever, 1 member</p>
+            <ul style="list-style:none;margin:0 0 24px;padding:0;font-size:13px;line-height:2;color:var(--ink-2);">
+              <li>1 concurrent build</li>
+              <li>100 GB bandwidth / mo</li>
+              <li>7-day preview retention</li>
+              <li>Community support</li>
+            </ul>
+            <button class="btn" type="button" style="margin-top:auto;" data-toast="Downgrade blocked" data-toast-detail="Hobby allows 1 member. Remove 3 seats from acme-platform first." data-toast-kind="bad">Downgrade to Hobby</button>
+          </article>
+
+          <article class="stat" style="display:flex;flex-direction:column;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+              <h2 style="font-size:14px;font-weight:600;margin:0;">Team</h2>
+              <span class="pill info">Current plan</span>
+            </div>
+            <div class="stat-num" data-price-monthly="$21" data-price-annual="$17.50">$21</div>
+            <p class="meta" style="margin:0 0 16px;">per seat / month</p>
+            <ul style="list-style:none;margin:0 0 24px;padding:0;font-size:13px;line-height:2;color:var(--ink-2);">
+              <li>6 concurrent builds</li>
+              <li>1 TB bandwidth / mo</li>
+              <li>90-day preview retention</li>
+              <li>2 log drain endpoints</li>
+              <li>SSO on preview URLs</li>
+              <li>1 business day support</li>
+            </ul>
+            <button class="btn primary" type="button" style="margin-top:auto;" data-toast="Seat management" data-toast-detail="4 of 10 seats used. Adding a seat prorates $14.70 for the remaining 21 days.">Manage seats</button>
+          </article>
+
+          <article class="stat" style="display:flex;flex-direction:column;">
+            <h2 style="font-size:14px;font-weight:600;margin:0 0 12px;">Enterprise</h2>
+            <div class="stat-num word" data-price-monthly="Custom" data-price-annual="Custom">Custom</div>
+            <p class="meta" style="margin:0 0 16px;">Committed annual contract</p>
+            <ul style="list-style:none;margin:0 0 24px;padding:0;font-size:13px;line-height:2;color:var(--ink-2);">
+              <li>24 concurrent builds</li>
+              <li>Committed bandwidth</li>
+              <li>Unlimited retention</li>
+              <li>Unlimited log drains</li>
+              <li>SAML + SCIM</li>
+              <li>2-hour support SLA</li>
+            </ul>
+            <a class="btn" href="./contact.html" style="margin-top:auto;">Talk to sales</a>
+          </article>
+        </div>
+
+
+        <div class="split even top">
+          <section class="panel reveal" id="usage-this-cycle" aria-labelledby="uc-t">
+            <div class="panel-head">
+              <h2 class="panel-title" id="uc-t">Usage this cycle</h2>
+              <span class="panel-sub">1 Jul &ndash; 28 Jul 2026 &middot; 21 days left</span>
+            </div>
+            <div class="panel-body">
+              <div class="meter-row">
+                <span class="meter-name">Bandwidth</span>
+                <span class="meter-val">612 GB of 1 TB</span>
+                <span class="meter"><i style="--w:61%;"></i></span>
+              </div>
+              <div class="meter-row">
+                <span class="meter-name">Build minutes</span>
+                <span class="meter-val">1,410 of 6,000</span>
+                <span class="meter"><i style="--w:24%;"></i></span>
+              </div>
+              <div class="meter-row">
+                <span class="meter-name">Edge invocations</span>
+                <span class="meter-val">4.28M of 10M</span>
+                <span class="meter"><i style="--w:43%;"></i></span>
+              </div>
+              <div class="meter-row">
+                <span class="meter-name">Image optimizations</span>
+                <span class="meter-val">38,204 of 100,000</span>
+                <span class="meter"><i style="--w:38%;"></i></span>
+              </div>
+              <div class="meter-row">
+                <span class="meter-name">Seats</span>
+                <span class="meter-val">4 of 10</span>
+                <span class="meter"><i style="--w:40%;"></i></span>
+              </div>
+            </div>
+            <div class="chart-foot">
+              <span>Projected at cycle close: <b>874 GB</b> bandwidth &middot; <b>2,010</b> build minutes</span>
+            </div>
+          </section>
+
+          <section class="panel reveal" id="invoice-history" aria-labelledby="ih-t">
+            <div class="panel-head">
+              <h2 class="panel-title" id="ih-t">Invoice history</h2>
+            </div>
+            <div class="scroll-x">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Invoice</th>
+                    <th scope="col">Date</th>
+                    <th scope="col" class="num">Amount</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td class="build">INV-2026-0714</td><td>28 Jul 2026</td><td class="num">$84.00</td><td><span class="pill ok">Paid</span></td></tr>
+                  <tr><td class="build">INV-2026-0688</td><td>28 Jun 2026</td><td class="num">$84.00</td><td><span class="pill ok">Paid</span></td></tr>
+                  <tr><td class="build">INV-2026-0651</td><td>28 May 2026</td><td class="num">$63.00</td><td><span class="pill ok">Paid</span></td></tr>
+                  <tr><td class="build">INV-2026-0619</td><td>28 Apr 2026</td><td class="num">$63.00</td><td><span class="pill ok">Paid</span></td></tr>
+                  <tr><td class="build">INV-2026-0577</td><td>28 Mar 2026</td><td class="num">$63.00</td><td><span class="pill warn">Refunded</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="table-foot">
+              <span>5 of 12 invoices</span>
+              <span class="actions"><button class="btn pager" type="button" data-toast="CSV queued" data-toast-detail="12 invoices will be emailed to arnab@acme.io within 2 minutes." data-toast-kind="ok">Download all as CSV</button></span>
+            </div>
+          </section>
+        </div>
+
+        <section class="reveal" id="add-ons" aria-labelledby="ao-t">
+          <h2 class="section-label" id="ao-t">Add-ons</h2>
+          <div class="empty">
+            <div class="empty-mark">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </div>
+            <p>No add-ons purchased.</p>
+            <small>Extra bandwidth blocks start at $28 per 500 GB. At the projected 874 GB you stay inside the included 1 TB.</small>
+            <button class="btn primary" type="button" data-toast="Add-on catalogue" data-toast-detail="Bandwidth blocks, extra build concurrency, and a 24-hour log retention upgrade.">Browse add-ons</button>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</div>
+
+<div class="cmdk" id="cmdk" role="dialog" aria-modal="true" aria-label="Command palette" aria-hidden="true">
+  <div class="cmdk-box">
+    <div class="cmdk-input">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6C7684" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="cmdk-input" type="text" placeholder="Jump to a page, build, or action&hellip;" role="combobox" aria-expanded="true" aria-controls="cmdk-list" aria-autocomplete="list" autocomplete="off">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="cmdk-list" id="cmdk-list" role="listbox" aria-label="Commands"></ul>
+    <div class="cmdk-foot">
+      <span>&uarr;&darr; move</span><span>&crarr; run</span><span>esc close</span>
+    </div>
+  </div>
+</div>
+
+<div class="toasts" role="status" aria-live="polite"></div>
+<script src="./assets/shell.js"></script>
+<script src="./assets/pricing.js"></script>
+</body>
+</html>

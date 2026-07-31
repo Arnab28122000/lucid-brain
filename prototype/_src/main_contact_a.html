@@ -1,0 +1,132 @@
+
+        <div class="page-head reveal">
+          <div>
+            <h1>Contact support</h1>
+            <div class="meta">Team plan &middot; first response within 1 business day &middot; <span class="live">current queue 3h 20m median</span></div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="./docs.html">Search the docs first</a>
+            <button class="btn" type="button" data-toast="Slack Connect" data-toast-detail="Channel #acme-relay-support &middot; 4 Relay engineers, 2 on call now.">Open Slack channel</button>
+          </div>
+        </div>
+
+        <div class="split top">
+          <section class="panel reveal" id="new-ticket" aria-labelledby="nt-t">
+            <div class="panel-head">
+              <h2 class="panel-title" id="nt-t">New ticket</h2>
+              <span class="panel-sub">Draft saved 2m ago</span>
+            </div>
+            <form class="panel-body" id="ticket-form" novalidate>
+              <div class="field">
+                <label for="t-subject">Subject</label>
+                <input class="input" id="t-subject" name="subject" type="text" placeholder="Build 4819 fails on branch fix/webhook-retry" required aria-describedby="t-subject-err">
+                <span class="err" id="t-subject-err">Add a subject so the on-call engineer can triage it.</span>
+              </div>
+
+              <div class="row-3">
+                <div class="field">
+                  <label for="t-category">Category</label>
+                  <select class="input" id="t-category" name="category">
+                    <option>Build failure</option>
+                    <option>Edge or caching</option>
+                    <option>Domains and DNS</option>
+                    <option>Billing</option>
+                    <option>Security disclosure</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="t-severity">Severity</label>
+                  <select class="input" id="t-severity" name="severity">
+                    <option>S1 &mdash; production down</option>
+                    <option selected>S2 &mdash; degraded</option>
+                    <option>S3 &mdash; workaround exists</option>
+                    <option>S4 &mdash; question</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="t-project">Project</label>
+                  <select class="input" id="t-project" name="project">
+                    <option>acme-platform</option>
+                    <option>acme-marketing</option>
+                    <option>acme-labs</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="t-deployment">Affected deployment</label>
+                <input class="input" id="t-deployment" name="deployment" type="text" placeholder="Build number or deployment URL">
+                <span class="hint">Most recent failure: build 4819 on fix/webhook-retry, 2h ago.</span>
+              </div>
+
+              <div class="field">
+                <label for="t-body">Description</label>
+                <textarea class="input" id="t-body" name="body" placeholder="Steps to reproduce, expected result, actual result." required aria-describedby="t-body-err"></textarea>
+                <span class="err" id="t-body-err">Describe what you expected and what happened instead &mdash; at least 20 characters.</span>
+              </div>
+
+              <div class="field">
+                <span class="lbl">Attachments</span>
+                <label class="drop" id="t-drop" for="t-file">
+                  <input id="t-file" type="file" class="sr-only" multiple>
+                  Drag build logs or screenshots here &middot; max 25 MB
+                </label>
+                <div class="chips" id="t-chips"></div>
+              </div>
+
+              <label class="check">
+                <input type="checkbox" id="t-diag" checked>
+                <span>Attach a diagnostics bundle automatically &mdash; build log, edge config, and the last 200 runtime lines.</span>
+              </label>
+
+              <div class="form-foot">
+                <button class="btn primary" type="submit">Submit ticket</button>
+                <button class="btn" type="button" data-toast="Draft saved" data-toast-detail="Kept for 30 days under Support &rarr; Drafts." data-toast-kind="ok">Save draft</button>
+                <span class="meta" style="margin-left:auto;">S2 target response: 1 business day</span>
+              </div>
+            </form>
+          </section>
+
+          <div>
+            <section class="panel reveal" id="direct-channels" aria-labelledby="dc-t">
+              <div class="panel-head"><h2 class="panel-title" id="dc-t">Direct channels</h2></div>
+              <div class="panel-body" style="padding:8px 20px;">
+                <ul class="link-list">
+                  <li><a href="./contact.html" data-toast="support@relaydeploy.com" data-toast-detail="General support, 1 business day on Team."><span class="k">support@relaydeploy.com</span><span class="v">Email</span></a></li>
+                  <li><a href="./contact.html" data-toast="#acme-relay-support" data-toast-detail="Slack Connect, 2 engineers on call now."><span class="k">#acme-relay-support</span><span class="v">Slack</span></a></li>
+                  <li><a href="./contact.html" data-toast="security@relaydeploy.com" data-toast-detail="PGP key 0x8F2A. 24-hour acknowledgement."><span class="k">security@relaydeploy.com</span><span class="v">Disclosures</span></a></li>
+                  <li><a href="./pricing.html"><span class="k">billing@relaydeploy.com</span><span class="v">Billing</span></a></li>
+                  <li><a href="./contact.html" data-toast="Phone support is Enterprise only" data-toast-detail="+1 415 555 0148 unlocks on an Enterprise contract." data-toast-kind="bad"><span class="k">+1 415 555 0148</span><span class="v">Enterprise</span></a></li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="panel reveal" id="system-status" aria-labelledby="ss-t">
+              <div class="panel-head">
+                <h2 class="panel-title" id="ss-t">System status</h2>
+                <span class="panel-sub">checked 40s ago</span>
+              </div>
+              <div class="panel-body" style="padding:8px 20px 16px;">
+                <ul class="status-list">
+                  <li>Build pipeline <span class="pill ok">Operational</span></li>
+                  <li>Edge network <span class="pill ok">Operational</span></li>
+                  <li>Dashboard API <span class="pill warn">Degraded</span></li>
+                  <li>Webhooks <span class="pill ok">Operational</span></li>
+                </ul>
+                <p style="margin:16px 0 0;font-size:12px;line-height:1.6;color:var(--ink-3);">Dashboard API is showing elevated latency in eu-west-1 since 09:12 UTC. Full history at status.relaydeploy.com.</p>
+              </div>
+            </section>
+
+            <section class="panel reveal" id="offices" aria-labelledby="of-t">
+              <div class="panel-head"><h2 class="panel-title" id="of-t">Offices</h2></div>
+              <div class="panel-body" style="padding:8px 20px 16px;">
+                <ul class="status-list">
+                  <li>San Francisco <span class="pill plain idle">HQ &middot; 09:00&ndash;18:00 PT</span></li>
+                  <li>Berlin <span class="pill plain idle">09:00&ndash;18:00 CET</span></li>
+                  <li>Bengaluru <span class="pill plain idle">10:00&ndash;19:00 IST</span></li>
+                </ul>
+                <p style="margin:16px 0 0;font-size:12px;line-height:1.6;color:var(--ink-3);">Follow-the-sun coverage means an S1 raised at any hour reaches an on-call engineer within 15 minutes.</p>
+              </div>
+            </section>
+          </div>
+        </div>

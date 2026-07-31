@@ -1,0 +1,12 @@
+{
+  "document_id": "C0PRICING/p1710253800",
+  "source_type": "slack",
+  "source_id": "C0PRICING",
+  "permalink": "https://acme.slack.com/archives/C0PRICING/p1710253800",
+  "title": "#pricing",
+  "body": "Priya: We went back and forth on this, but we have decided to move the Enterprise plan to $40 per seat per month starting 2026-04-01.\nMarco: Agreed. That replaces the $32 we published on the pricing page in January.\nPriya: I will update the pricing page by Friday. EU tenants stay on eu-central-1 for now.",
+  "author": { "external_id": "U-PRIYA", "display_name": "Priya Raman" },
+  "participants": [{ "external_id": "U-MARCO", "display_name": "Marco Silva" }],
+  "acl_group_ids": ["g-pricing", "g-leadership"],
+  "occurred_at": "2026-03-12T14:30:00Z"
+}

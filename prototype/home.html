@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="page-mode" content="designed">
+<title>Home &mdash; Relay Deploy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/shell.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app-shell">
+
+  <nav class="side" aria-label="Primary">
+    <button class="ws" type="button" aria-label="Switch workspace" data-toast="Workspace switcher" data-toast-detail="Two other workspaces: acme-marketing, acme-labs.">
+      <span class="ws-mark">RD</span>
+      <span>
+        <span class="ws-name">Relay Deploy</span><br>
+        <span class="ws-sub">acme-platform</span>
+      </span>
+      <svg class="ws-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+
+    <div>
+      <div class="nav-label">Primary Nav</div>
+      <div class="nav-list">
+        <a href="./home.html" class="active" aria-current="page">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 10.5 12 4l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+          Home
+        </a>
+        <a href="./features.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 16l9 5 9-5"/></svg>
+          Features<span class="tail">14</span>
+        </a>
+        <a href="./pricing.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.6 13.4 12 22l-9-9V4h9z"/><circle cx="7.5" cy="7.5" r="1.4"/></svg>
+          Pricing
+        </a>
+        <a href="./docs.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4h9a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-1a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h2z"/></svg>
+          Docs
+        </a>
+        <a href="./contact.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+          Contact<span class="tail">3</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="acct">
+      <div class="nav-label">Account</div>
+      <div class="acct-row">
+        <span class="avatar" aria-hidden="true">AB</span>
+        <span style="min-width:0;">
+          <span class="acct-mail">arnab@acme.io</span><br>
+          <span class="acct-plan">Team plan &middot; 4 seats</span>
+        </span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="col">
+    <header class="top">
+      <div class="crumb">Home / <b>Overview</b></div>
+      <button class="search" type="button" data-cmdk aria-label="Open command palette">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span style="flex:1;">Search deploys, docs, invoices&hellip;</span>
+        <kbd>&#8984;K</kbd>
+      </button>
+      <button class="icon-btn" type="button" aria-label="Notifications, 3 unread" data-toast="3 unread notifications" data-toast-detail="CI failed on fix/webhook-retry &middot; eu-west-1 latency &middot; invoice INV-2026-0714 paid.">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 6-2 7-2 7h16s-2-1-2-7"/><path d="M10.5 20a2 2 0 0 0 3 0"/></svg>
+        <span class="dot">3</span>
+      </button>
+      <button class="icon-btn avatar" type="button" title="Arnab B." aria-label="Account menu for Arnab B." data-toast="Signed in as Arnab B." data-toast-detail="arnab@acme.io &middot; Owner on acme-platform.">AB</button>
+    </header>
+
+    <main id="main">
+      <div class="wrap">
+
+        <div class="page-head reveal">
+          <div>
+            <h1>Overview &mdash; last 7 days</h1>
+            <div class="meta">us-east-1 &middot; Production &middot; <span class="live">updated 4 min ago</span></div>
+          </div>
+          <div class="actions">
+            <button class="btn" type="button" data-toast="Range" data-toast-detail="Switch to 24h, 7d, 30d, or a custom window.">Range: 7d <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+            <button class="btn" type="button" data-toast="Environment" data-toast-detail="Production, Preview, or all 38 open preview URLs.">Environment <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+            <button class="btn primary" type="button" data-toast="Deployment queued" data-toast-detail="Build 4822 started from main. Estimated 3m 40s." data-toast-kind="ok">New deployment</button>
+          </div>
+        </div>
+
+        <div class="kpis reveal">
+          <div class="stat">
+            <div class="stat-label">Deploys shipped</div>
+            <div class="stat-num">142</div>
+            <div class="delta up">&#9650; 19 <span>vs prior week</span></div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Median build time</div>
+            <div class="stat-num">3m 47s</div>
+            <div class="delta down">&#9660; 51s <span>vs prior week</span></div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Failed builds</div>
+            <div class="stat-num">7</div>
+            <div class="delta bad">&#9650; 2 <span>vs prior week</span></div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Edge requests</div>
+            <div class="stat-num">4.28M</div>
+            <div class="delta up">&#9650; 312k <span>vs prior week</span></div>
+          </div>
+        </div>
+
+        <div class="split">
+          <section class="panel reveal" id="build-duration" aria-labelledby="bd-t">
+            <div class="panel-head">
+              <h2 class="panel-title" id="bd-t">Build duration</h2>
+              <div class="legend">
+                <span class="prod"><i></i>Production</span>
+                <span class="prev"><i></i>Preview</span>
+              </div>
+            </div>
+            <div class="chart">
+              <svg viewBox="0 0 640 220" role="img" aria-label="Line chart of build duration in seconds from July 24 to July 31. Production trends down from 232 to 192 seconds; preview holds near 150 to 190 seconds. A rail beneath the chart marks 9 ready, 2 failed and 1 building deployment.">
+                <line class="gridline" x1="40" y1="24" x2="616" y2="24"/>
+                <line class="gridline" x1="40" y1="98" x2="616" y2="98"/>
+                <line class="gridline" x1="40" y1="172" x2="616" y2="172"/>
+                <text class="axis" x="8" y="27">280s</text>
+                <text class="axis" x="8" y="101">200s</text>
+                <text class="axis" x="8" y="175">120s</text>
+
+                <path class="area" d="M44,68.4 L123,55.4 L202,73.1 L281,60.1 L360,80.4 L439,66.5 L518,99.8 L597,105.4 L597,172 L44,172 Z"/>
+                <line class="p50" x1="40" y1="73.1" x2="616" y2="73.1"/>
+                <text class="axis" x="600" y="69" text-anchor="end">p50 227s</text>
+
+                <path class="series prev draw" d="M44,127.6 L123,121.1 L202,135 L281,108.2 L360,140.6 L439,132.2 L518,145.2 L597,143.3"/>
+                <path class="series prod draw" d="M44,68.4 L123,55.4 L202,73.1 L281,60.1 L360,80.4 L439,66.5 L518,99.8 L597,105.4"/>
+
+                <line class="tick-rail" x1="44"  y1="190" x2="70"  y2="190" stroke="#0C7145"/>
+                <line class="tick-rail" x1="80"  y1="190" x2="118" y2="190" stroke="#0C7145"/>
+                <line class="tick-rail" x1="128" y1="190" x2="146" y2="190" stroke="#B22318"/>
+                <line class="tick-rail" x1="156" y1="190" x2="200" y2="190" stroke="#0C7145"/>
+                <line class="tick-rail" x1="210" y1="190" x2="276" y2="190" stroke="#0C7145"/>
+                <line class="tick-rail" x1="286" y1="190" x2="330" y2="190" stroke="#0C7145"/>
+                <line class="tick-rail" x1="340" y1="190" x2="358" y2="190" stroke="#B22318"/>
+                <line class="tick-rail" x1="368" y1="190" x2="434" y2="190" stroke="#0C7145"/>
+                <line class="tick-rail" x1="444" y1="190" x2="512" y2="190" stroke="#0C7145"/>
+                <line class="tick-rail" x1="522" y1="190" x2="570" y2="190" stroke="#0C7145"/>
+                <line class="tick-rail" x1="580" y1="190" x2="597" y2="190" stroke="#8A5A06"/>
+
+                <text class="axis" x="44"  y="210">Jul 24</text>
+                <text class="axis" x="123" y="210">25</text>
+                <text class="axis" x="202" y="210">26</text>
+                <text class="axis" x="281" y="210">27</text>
+                <text class="axis" x="360" y="210">28</text>
+                <text class="axis" x="439" y="210">29</text>
+                <text class="axis" x="518" y="210">30</text>
+                <text class="axis" x="577" y="210">Jul 31</text>
+              </svg>
+            </div>
+            <div class="chart-foot">
+              <span>Deploy rail: <b>9 ready</b> &middot; <b>2 failed</b> &middot; <b>1 building</b></span>
+              <span>Fastest <b>1m 44s</b> &middot; slowest <b>4m 05s</b></span>
+            </div>
+          </section>
+
+          <section class="panel reveal" id="activity" aria-labelledby="act-t">
+            <div class="panel-head"><h2 class="panel-title" id="act-t">Activity</h2></div>
+            <div class="feed">
+              <div class="feed-day">Today</div>
+              <ul>
+                <li><b>Arnab</b> promoted build <code>#4821</code> to production &middot; <time>12m ago</time></li>
+                <li><b>Priya</b> rolled back <code>checkout-api</code> to <code>#4816</code> &middot; <time>1h ago</time></li>
+                <li class="hit">CI failed on branch <code>fix/webhook-retry</code> &middot; <time>2h ago</time></li>
+              </ul>
+              <div class="feed-day">Yesterday</div>
+              <ul>
+                <li><b>Marcus</b> added domain <code>status.acme.io</code> &middot; <time>19h ago</time></li>
+                <li><b>Emma</b> invited 2 members to <code>acme-platform</code> &middot; <time>21h ago</time></li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+
+        <section class="panel reveal" id="recent-deployments" style="margin-bottom:24px;" aria-labelledby="rd-t">
+          <div class="panel-head"><h2 class="panel-title" id="rd-t">Recent deployments</h2></div>
+          <div class="toolbar">
+            <label class="search">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <input type="search" placeholder="Filter by build, branch, commit or author&hellip;" aria-label="Filter deployments" data-filters="#deploy-table" data-count="#deploy-count" data-empty="#deploy-empty">
+            </label>
+            <button class="btn" type="button" data-toast="Status filter" data-toast-detail="Ready 9, Failed 2, Building 1, Queued 0.">Status <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+            <button class="btn" type="button" data-toast="Branch filter" data-toast-detail="main, fix/webhook-retry, preview/pricing-v3, preview/docs-search.">Branch <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          </div>
+          <div class="scroll-x">
+            <table id="deploy-table">
+              <thead>
+                <tr>
+                  <th scope="col">Build&nbsp;#</th>
+                  <th scope="col">Branch</th>
+                  <th scope="col">Commit</th>
+                  <th scope="col">Author</th>
+                  <th scope="col" class="dur">Duration</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="build">#4821</td>
+                  <td class="branch">main</td>
+                  <td><span class="hash">a91fc3d</span><span class="msg">tighten webhook retry</span></td>
+                  <td>Arnab B.</td>
+                  <td class="dur">3m 12s</td>
+                  <td><span class="pill ready">Ready</span></td>
+                </tr>
+                <tr>
+                  <td class="build">#4820</td>
+                  <td class="branch">preview/pricing-v3</td>
+                  <td><span class="hash">77bd10e</span><span class="msg">new tier copy</span></td>
+                  <td>Priya S.</td>
+                  <td class="dur">4m 05s</td>
+                  <td><span class="pill ready">Ready</span></td>
+                </tr>
+                <tr>
+                  <td class="build">#4819</td>
+                  <td class="branch">fix/webhook-retry</td>
+                  <td><span class="hash">2ce884a</span><span class="msg">add backoff</span></td>
+                  <td>Marcus R.</td>
+                  <td class="dur">1m 44s</td>
+                  <td><span class="pill failed">Failed</span></td>
+                </tr>
+                <tr>
+                  <td class="build">#4818</td>
+                  <td class="branch">main</td>
+                  <td><span class="hash">b03aa71</span><span class="msg">bump edge runtime</span></td>
+                  <td>Emma C.</td>
+                  <td class="dur">3m 58s</td>
+                  <td><span class="pill ready">Ready</span></td>
+                </tr>
+                <tr>
+                  <td class="build">#4817</td>
+                  <td class="branch">preview/docs-search</td>
+                  <td><span class="hash">5df2019</span><span class="msg">index API refs</span></td>
+                  <td>Arnab B.</td>
+                  <td class="dur">2m 31s</td>
+                  <td><span class="pill building">Building</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="empty" id="deploy-empty" style="margin:16px 20px;" hidden>
+              <p>No deployment matches that filter.</p>
+              <small>Try a build number like 4821, a branch like main, or an author surname.</small>
+            </div>
+          </div>
+          <div class="table-foot">
+            <span>Showing <span id="deploy-count">5</span> of 142 &middot; Page 1 of 29</span>
+            <span class="actions">
+              <button class="btn pager" type="button" disabled>Previous</button>
+              <button class="btn pager" type="button" data-toast="Page 2 of 29" data-toast-detail="Builds 4816 down to 4812, 26 Jul to 24 Jul.">Next</button>
+            </span>
+          </div>
+        </section>
+
+        <section class="reveal" id="scheduled-rollouts" aria-labelledby="sr-t">
+          <h2 class="section-label" id="sr-t">Scheduled rollouts</h2>
+          <div class="empty">
+            <div class="empty-mark">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            </div>
+            <p>No rollouts scheduled for this week.</p>
+            <small>Rollout windows pause traffic shifts outside business hours.</small>
+            <button class="btn primary" type="button" data-toast="Rollout window drafted" data-toast-detail="Mon 4 Aug, 09:00 to 17:00 Europe/Berlin. Needs one approver." data-toast-kind="ok">Schedule a rollout window</button>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</div>
+
+<div class="cmdk" id="cmdk" role="dialog" aria-modal="true" aria-label="Command palette" aria-hidden="true">
+  <div class="cmdk-box">
+    <div class="cmdk-input">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6C7684" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="cmdk-input" type="text" placeholder="Jump to a page, build, or action&hellip;" role="combobox" aria-expanded="true" aria-controls="cmdk-list" aria-autocomplete="list" autocomplete="off">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="cmdk-list" id="cmdk-list" role="listbox" aria-label="Commands"></ul>
+    <div class="cmdk-foot">
+      <span>&uarr;&darr; move</span><span>&crarr; run</span><span>esc close</span>
+    </div>
+  </div>
+</div>
+
+<div class="toasts" role="status" aria-live="polite"></div>
+<script src="./assets/shell.js"></script>
+
+</body>
+</html>

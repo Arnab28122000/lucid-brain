@@ -1,0 +1,67 @@
+
+        <div class="page-head reveal">
+          <div>
+            <h1>Team &mdash; <span id="plan-total">$84</span> / month</h1>
+            <div class="meta">4 seats &times; <span id="plan-seat">$21</span> &middot; Renews 28 Aug 2026 &middot; Card ending 4417</div>
+          </div>
+          <div class="actions">
+            <button class="btn" type="button" data-toast="Payment method" data-toast-detail="Visa ending 4417, expires 09/2028. Billing contact billing@acme.io.">Update payment method</button>
+            <button class="btn primary" type="button" data-toast="Plan change" data-toast-detail="Downgrades take effect at the end of the cycle, 28 Aug 2026." data-toast-kind="ok">Change plan</button>
+          </div>
+        </div>
+
+        <div class="reveal" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
+          <div class="seg" role="group" aria-label="Billing cycle" data-seg="cycle">
+            <button type="button" data-value="monthly" aria-pressed="true">Monthly</button>
+            <button type="button" data-value="annual" aria-pressed="false">Annual &mdash; 2 months free</button>
+          </div>
+          <span class="meta" id="cycle-note">Switching to annual saves $168 a year at 4 seats.</span>
+        </div>
+
+        <div class="kpis reveal" id="plan-tiers" style="grid-template-columns:repeat(3,1fr);align-items:stretch;">
+          <article class="stat" style="display:flex;flex-direction:column;">
+            <h2 style="font-size:14px;font-weight:600;margin:0 0 12px;">Hobby</h2>
+            <div class="stat-num" data-price-monthly="$0" data-price-annual="$0">$0</div>
+            <p class="meta" style="margin:0 0 16px;">Forever, 1 member</p>
+            <ul style="list-style:none;margin:0 0 24px;padding:0;font-size:13px;line-height:2;color:var(--ink-2);">
+              <li>1 concurrent build</li>
+              <li>100 GB bandwidth / mo</li>
+              <li>7-day preview retention</li>
+              <li>Community support</li>
+            </ul>
+            <button class="btn" type="button" style="margin-top:auto;" data-toast="Downgrade blocked" data-toast-detail="Hobby allows 1 member. Remove 3 seats from acme-platform first." data-toast-kind="bad">Downgrade to Hobby</button>
+          </article>
+
+          <article class="stat" style="display:flex;flex-direction:column;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+              <h2 style="font-size:14px;font-weight:600;margin:0;">Team</h2>
+              <span class="pill info">Current plan</span>
+            </div>
+            <div class="stat-num" data-price-monthly="$21" data-price-annual="$17.50">$21</div>
+            <p class="meta" style="margin:0 0 16px;">per seat / month</p>
+            <ul style="list-style:none;margin:0 0 24px;padding:0;font-size:13px;line-height:2;color:var(--ink-2);">
+              <li>6 concurrent builds</li>
+              <li>1 TB bandwidth / mo</li>
+              <li>90-day preview retention</li>
+              <li>2 log drain endpoints</li>
+              <li>SSO on preview URLs</li>
+              <li>1 business day support</li>
+            </ul>
+            <button class="btn primary" type="button" style="margin-top:auto;" data-toast="Seat management" data-toast-detail="4 of 10 seats used. Adding a seat prorates $14.70 for the remaining 21 days.">Manage seats</button>
+          </article>
+
+          <article class="stat" style="display:flex;flex-direction:column;">
+            <h2 style="font-size:14px;font-weight:600;margin:0 0 12px;">Enterprise</h2>
+            <div class="stat-num word" data-price-monthly="Custom" data-price-annual="Custom">Custom</div>
+            <p class="meta" style="margin:0 0 16px;">Committed annual contract</p>
+            <ul style="list-style:none;margin:0 0 24px;padding:0;font-size:13px;line-height:2;color:var(--ink-2);">
+              <li>24 concurrent builds</li>
+              <li>Committed bandwidth</li>
+              <li>Unlimited retention</li>
+              <li>Unlimited log drains</li>
+              <li>SAML + SCIM</li>
+              <li>2-hour support SLA</li>
+            </ul>
+            <a class="btn" href="./contact.html" style="margin-top:auto;">Talk to sales</a>
+          </article>
+        </div>

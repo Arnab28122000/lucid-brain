@@ -1,0 +1,10 @@
+# Keep the build context to source: everything else either bloats the layer or
+# risks baking local state into an image that ships to customers.
+.git
+.gitignore
+Dockerfile
+docker-compose.yml
+Makefile
+README.md
+testdata
+**/*_test.go

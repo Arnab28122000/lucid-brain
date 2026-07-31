@@ -1,0 +1,80 @@
+
+        <div class="split even top">
+          <section class="panel reveal" id="usage-this-cycle" aria-labelledby="uc-t">
+            <div class="panel-head">
+              <h2 class="panel-title" id="uc-t">Usage this cycle</h2>
+              <span class="panel-sub">1 Jul &ndash; 28 Jul 2026 &middot; 21 days left</span>
+            </div>
+            <div class="panel-body">
+              <div class="meter-row">
+                <span class="meter-name">Bandwidth</span>
+                <span class="meter-val">612 GB of 1 TB</span>
+                <span class="meter"><i style="--w:61%;"></i></span>
+              </div>
+              <div class="meter-row">
+                <span class="meter-name">Build minutes</span>
+                <span class="meter-val">1,410 of 6,000</span>
+                <span class="meter"><i style="--w:24%;"></i></span>
+              </div>
+              <div class="meter-row">
+                <span class="meter-name">Edge invocations</span>
+                <span class="meter-val">4.28M of 10M</span>
+                <span class="meter"><i style="--w:43%;"></i></span>
+              </div>
+              <div class="meter-row">
+                <span class="meter-name">Image optimizations</span>
+                <span class="meter-val">38,204 of 100,000</span>
+                <span class="meter"><i style="--w:38%;"></i></span>
+              </div>
+              <div class="meter-row">
+                <span class="meter-name">Seats</span>
+                <span class="meter-val">4 of 10</span>
+                <span class="meter"><i style="--w:40%;"></i></span>
+              </div>
+            </div>
+            <div class="chart-foot">
+              <span>Projected at cycle close: <b>874 GB</b> bandwidth &middot; <b>2,010</b> build minutes</span>
+            </div>
+          </section>
+
+          <section class="panel reveal" id="invoice-history" aria-labelledby="ih-t">
+            <div class="panel-head">
+              <h2 class="panel-title" id="ih-t">Invoice history</h2>
+            </div>
+            <div class="scroll-x">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Invoice</th>
+                    <th scope="col">Date</th>
+                    <th scope="col" class="num">Amount</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td class="build">INV-2026-0714</td><td>28 Jul 2026</td><td class="num">$84.00</td><td><span class="pill ok">Paid</span></td></tr>
+                  <tr><td class="build">INV-2026-0688</td><td>28 Jun 2026</td><td class="num">$84.00</td><td><span class="pill ok">Paid</span></td></tr>
+                  <tr><td class="build">INV-2026-0651</td><td>28 May 2026</td><td class="num">$63.00</td><td><span class="pill ok">Paid</span></td></tr>
+                  <tr><td class="build">INV-2026-0619</td><td>28 Apr 2026</td><td class="num">$63.00</td><td><span class="pill ok">Paid</span></td></tr>
+                  <tr><td class="build">INV-2026-0577</td><td>28 Mar 2026</td><td class="num">$63.00</td><td><span class="pill warn">Refunded</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="table-foot">
+              <span>5 of 12 invoices</span>
+              <span class="actions"><button class="btn pager" type="button" data-toast="CSV queued" data-toast-detail="12 invoices will be emailed to arnab@acme.io within 2 minutes." data-toast-kind="ok">Download all as CSV</button></span>
+            </div>
+          </section>
+        </div>
+
+        <section class="reveal" id="add-ons" aria-labelledby="ao-t">
+          <h2 class="section-label" id="ao-t">Add-ons</h2>
+          <div class="empty">
+            <div class="empty-mark">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </div>
+            <p>No add-ons purchased.</p>
+            <small>Extra bandwidth blocks start at $28 per 500 GB. At the projected 874 GB you stay inside the included 1 TB.</small>
+            <button class="btn primary" type="button" data-toast="Add-on catalogue" data-toast-detail="Bandwidth blocks, extra build concurrency, and a 24-hour log retention upgrade.">Browse add-ons</button>
+          </div>
+        </section>
